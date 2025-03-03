@@ -4,8 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.vaschenko.DistributionNode.annotation.FeignRetryable;
-import ru.vaschenko.DistributionNode.dto.ResultLatinSquare;
-import ru.vaschenko.DistributionNode.dto.SubTask;
 import ru.vaschenko.DistributionNode.dto.SubTaskRequest;
 
 import java.util.List;
@@ -18,19 +16,19 @@ public class ComputingNodeClintFacade implements ComputingNodeClient {
 
   @Override
   @FeignRetryable
-  public List<ResultLatinSquare> calculateLatinSquare(SubTaskRequest subTask) {
+  public List<Object> calculateLatinSquare(SubTaskRequest subTask) {
     try {
-      log.info("Sending request for work node in subtask {}", subTask.subTask().number());
-      List<ResultLatinSquare> result = computingNodeClient.calculateLatinSquare(subTask);
-      log.info("Received result for subtask {}", subTask.subTask().number());
+      log.info("Sending request for work node in subtask {}", subTask);
+      List<Object> result = computingNodeClient.calculateLatinSquare(subTask);
+      log.info("Received result for subtask {}", subTask);
       return result;
     } catch (Exception e) {
       log.error(
               "Error occurred while calculating Latin Square for subtask {}: {}",
-              subTask.subTask().number(),
+              subTask.subTask(),
               e.getMessage());
       throw new RuntimeException(
-              "Error calculating Latin Square for subtask " + subTask.subTask().number(),
+              "Error calculating Latin Square for subtask " + subTask.subTask(),
               e);
     }
   }

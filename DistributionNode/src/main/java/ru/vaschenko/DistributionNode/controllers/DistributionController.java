@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 import ru.vaschenko.DistributionNode.Services.DistributionServices;
 import ru.vaschenko.DistributionNode.api.DistributionApi;
+import ru.vaschenko.DistributionNode.dto.TaskRequest;
 
 import java.util.List;
 import java.util.Objects;
@@ -14,7 +15,7 @@ public class DistributionController implements DistributionApi {
     private final DistributionServices distributionServices;
 
     @Override
-    public List<Object> getSubTask(Object task) {
+    public List<Object> getSubTask(TaskRequest task) {
         return distributionServices.distribute(task);
     }
 }
