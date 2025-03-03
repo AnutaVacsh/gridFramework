@@ -81,7 +81,6 @@
 			<version>${org.jeasy.easy-random-core.test.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

@@ -1,10 +1,12 @@
-package ru.vaschenko.DistributionNode.Services;
+package ru.vaschenko.DistributionNode.services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;
@@ -14,6 +16,7 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+
 
 @Slf4j
 @Service
@@ -33,10 +36,13 @@ public class ClassLoaderService {
             Enumeration<JarEntry> entries = jarFile.entries();
             while (entries.hasMoreElements()) {
                 JarEntry entry = entries.nextElement();
+                log.debug("Файл в jar, {}", entry);
+
                 if (entry.getName().endsWith(".class")) {
                     String className = entry.getName()
                             .replace('/', '.')
                             .replace(".class", "");
+                    log.debug("Новое имя, {}", className);
                     try {
                         Class<?> loadedClass = loader.loadClass(className);
                         loadedClasses.add(loadedClass);
@@ -63,37 +69,40 @@ public class ClassLoaderService {
      * @throws Exception при ошибках в процессе рефлексии
      */
     public Object findAndInvokeSinglePublicMethod(List<Class<?>> classes, String interfaceName, Object... parameterValues) throws Exception {
-        // Находим интерфейс
         final Class<?> targetInterface = findInterface(classes, interfaceName);
 
         if (targetInterface == null) {
             throw new RuntimeException("Не найден интерфейс с именем " + interfaceName);
         }
 
-        // Ищем класс, который реализует интерфейс
         Class<?> targetClass = findImplementingClass(classes, targetInterface);
 
         if (targetClass == null) {
             throw new RuntimeException("Не найден класс, реализующий интерфейс " + interfaceName);
         }
 
-        // Получаем все публичные методы класса
         Method[] methods = targetClass.getDeclaredMethods();
 
-        // Фильтруем только публичные методы
         Method targetMethod = Arrays.stream(methods)
-                .filter(method -> method.getModifiers() == 1) // 1 - это модификатор публичного метода
+                .filter(method -> method.getModifiers() == Modifier.PUBLIC)
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Не найден публичный метод в классе " + targetClass.getName()));
 
-        // Преобразуем параметры в нужные типы, используя рефлексию
-        Class<?>[] parameterTypes = new Class[parameterValues.length];
+        log.debug("Публичные методы класса {}", targetMethod);
+        log.debug("Передаём параметр {}, \nкастим к типу {}", parameterValues[0]);
+
+        Class<?>[] parameterTypes = targetMethod.getParameterTypes();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        Object[] castedParameters = new Object[parameterValues.length];
         for (int i = 0; i < parameterValues.length; i++) {
-            parameterTypes[i] = parameterValues[i].getClass();
+            castedParameters[i] = objectMapper.convertValue(parameterValues[i], parameterTypes[i]);
         }
 
-        // Вызываем метод на найденном классе
-        return targetMethod.invoke(targetClass.getDeclaredConstructor().newInstance(), parameterValues);
+        log.debug("Параметры: {}", Arrays.toString(castedParameters));
+
+        // Вызываем метод с кастованными параметрами
+        return targetMethod.invoke(targetClass.getDeclaredConstructor().newInstance(), castedParameters);
     }
 
     /**

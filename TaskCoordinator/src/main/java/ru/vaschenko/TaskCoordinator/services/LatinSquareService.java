@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,59 +27,64 @@ public class LatinSquareService {
   private final DistributionNodeClintFacade client;
   private final CompilerServer compilerServer;
   private final JarPackingService jarPackingService;
-  private final Solver solver;
-  private final Generator generator;
-  private final Distributor distributor;
-  private final Collector collector;
+  private final Solver solverImpl;
+  private final Generator generatorImpl;
+  private final Distributor distributorImpl;
+  private final Collector collectorImpl;
 
   public List<ResultLatinSquare> solveTask(Task task) throws Exception {
 
-    TaskRequest tr = new TaskRequest(
+    TaskRequest tr =
+        new TaskRequest(
             task,
             jarPackingService.getJarBytes(
-                    List.of(
-                            distributor.getClass(),
-                            generator.getClass(),
-                            solver.getClass(),
-                            collector.getClass(),
-                            Task.class,
-                            TaskRequest.class,
-                            SubTask.class,
-                            ResultLatinSquare.class)));
+                List.of(
+                    Distributor.class,
+                    Generator.class,
+                    Solver.class,
+                    Collector.class,
+                    Task.class,
+                    TaskRequest.class,
+                    SubTask.class,
+                    ResultLatinSquare.class,
+                    distributorImpl.getClass(),
+                    generatorImpl.getClass(),
+                    solverImpl.getClass(),
+                    collectorImpl.getClass())));
 
     log.debug("{}", tr);
     return client.submitTask(tr);
 
-//    File distributorJavaFile = getJavaFilePath(distributor.getClass());
-//    File generatorJavaFile = getJavaFilePath(generator.getClass());
-//    File solverJavaFile = getJavaFilePath(solver.getClass());
-//    File collectorJavaFile = getJavaFilePath(collector.getClass());
-//
-//    compilerServer.compileJavaFiles(
-//        List.of(distributorJavaFile, generatorJavaFile, solverJavaFile, collectorJavaFile));
-//
-//    File distributorClassFile = getClassFilePath(distributor.getClass());
-//    File generatorClassFile = getClassFilePath(generator.getClass());
-//    File solverClassFile = getClassFilePath(solver.getClass());
-//    File collectorClassFile = getClassFilePath(collector.getClass());
-//
-//    if (!generatorClassFile.exists()
-//        || !solverClassFile.exists()
-//        || !collectorClassFile.exists()
-//        || !distributorClassFile.exists()) {
-//      throw new FileNotFoundException("Class files not found after compilation!");
-//    }
+    //    File distributorJavaFile = getJavaFilePath(distributor.getClass());
+    //    File generatorJavaFile = getJavaFilePath(generator.getClass());
+    //    File solverJavaFile = getJavaFilePath(solver.getClass());
+    //    File collectorJavaFile = getJavaFilePath(collector.getClass());
+    //
+    //    compilerServer.compileJavaFiles(
+    //        List.of(distributorJavaFile, generatorJavaFile, solverJavaFile, collectorJavaFile));
+    //
+    //    File distributorClassFile = getClassFilePath(distributor.getClass());
+    //    File generatorClassFile = getClassFilePath(generator.getClass());
+    //    File solverClassFile = getClassFilePath(solver.getClass());
+    //    File collectorClassFile = getClassFilePath(collector.getClass());
+    //
+    //    if (!generatorClassFile.exists()
+    //        || !solverClassFile.exists()
+    //        || !collectorClassFile.exists()
+    //        || !distributorClassFile.exists()) {
+    //      throw new FileNotFoundException("Class files not found after compilation!");
+    //    }
   }
 
-//  private File getJavaFilePath(Class<?> clazz) throws IOException {
-//    String className = clazz.getSimpleName() + ".java";
-//    String packagePath = clazz.getPackageName().replace('.', '/');
-//    return new File(new File("src/main/java/" + packagePath, className).getCanonicalPath());
-//  }
-//
-//  private File getClassFilePath(Class<?> clazz) throws IOException {
-//    String className = clazz.getSimpleName() + ".class";
-//    String packagePath = clazz.getPackageName().replace('.', '/');
-//    return new File(new File("temp/" + packagePath, className).getCanonicalPath());
-//  }
+  //  private File getJavaFilePath(Class<?> clazz) throws IOException {
+  //    String className = clazz.getSimpleName() + ".java";
+  //    String packagePath = clazz.getPackageName().replace('.', '/');
+  //    return new File(new File("src/main/java/" + packagePath, className).getCanonicalPath());
+  //  }
+  //
+  //  private File getClassFilePath(Class<?> clazz) throws IOException {
+  //    String className = clazz.getSimpleName() + ".class";
+  //    String packagePath = clazz.getPackageName().replace('.', '/');
+  //    return new File(new File("temp/" + packagePath, className).getCanonicalPath());
+  //  }
 }

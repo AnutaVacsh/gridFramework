@@ -1,13 +1,12 @@
 package ru.vaschenko.TaskCoordinator.services;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.List;
 import java.util.jar.*;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
@@ -18,9 +17,8 @@ public class JarPackingService {
     log.info("==> Начинаем упаковку JAR-файла...");
     log.info("Всего классов для упаковки: {}", includedClasses.size());
 
-    List<String> classPaths = includedClasses.stream()
-            .map(this::getClassFilePath)
-            .collect(Collectors.toList());
+    List<String> classPaths =
+        includedClasses.stream().map(this::getClassFilePath).collect(Collectors.toList());
 
     log.info("Файлы для упаковки:");
     classPaths.forEach(path -> log.info("  - {}", path));
@@ -56,7 +54,8 @@ public class JarPackingService {
     }
   }
 
-  private void addFileToJar(JarOutputStream jarOut, Path filePath, String entryName) throws IOException {
+  private void addFileToJar(JarOutputStream jarOut, Path filePath, String entryName)
+      throws IOException {
     try (InputStream in = Files.newInputStream(filePath)) {
       JarEntry entry = new JarEntry(entryName);
       jarOut.putNextEntry(entry);

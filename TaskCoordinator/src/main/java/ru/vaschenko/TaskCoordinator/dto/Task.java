@@ -14,4 +14,4 @@ public record Task(
             description = "Matrix representing the Latin square (some values may be null)",
             example =
                 "[[\"A\", null, null, null], [null, \"A\", null, \"C\"], [\"C\", null, \"A\", null], [null, \"C\", null, \"A\"]]")
-        List<List<Character>> matrix) implements Serializable {}
+        List<List<Character>> matrix){}
