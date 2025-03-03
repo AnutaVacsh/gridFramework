@@ -1,9 +1,6 @@
-package ru.vaschenko.DistributionNode.services;
+package ru.vaschenko.ComputingNode.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -16,7 +13,8 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
@@ -93,7 +91,12 @@ public class ClassLoaderService {
 
         Object[] castedParameters = new Object[parameterValues.length];
         for (int i = 0; i < parameterValues.length; i++) {
-            castedParameters[i] = objectMapper.convertValue(parameterValues[i], parameterTypes[i]);
+            log.debug("Кастим {} к {}",parameterTypes[i], parameterTypes[i]);
+            if (parameterTypes[i].isInstance(parameterValues[i])) {
+                castedParameters[i] = parameterValues[i];
+            } else {
+                castedParameters[i] = objectMapper.convertValue(parameterValues[i], parameterTypes[i]);
+            }
         }
 
         log.debug("Параметры: {}", Arrays.toString(castedParameters));

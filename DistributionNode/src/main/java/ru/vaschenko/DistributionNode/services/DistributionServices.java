@@ -15,52 +15,48 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class DistributionServices {
-    private final ComputingNodeClintFacade client;
-    private final JarStorageService jarStorageService;
-    private final ClassLoaderService jarClassLoaderService;
+  private final ComputingNodeClintFacade client;
+  private final JarStorageService jarStorageService;
+  private final ClassLoaderService jarClassLoaderService;
 
-    private List<Class<?>> classes = new ArrayList<>();
+  private List<Class<?>> classes = new ArrayList<>();
 
-    /**
-     * распределить задачи на подзадачи
-     */
-    public List<Object> distribute(TaskRequest task) {
-        Path jarPath = jarStorageService.saveJar(task.jar());
+  /** распределить задачи на подзадачи */
+  public List<Object> distribute(TaskRequest task) {
+    Path jarPath = jarStorageService.saveJar(task.jar());
 
-        classes = jarClassLoaderService.loadAllClasses(jarPath);
+    classes = jarClassLoaderService.loadAllClasses(jarPath);
 
-        try {
-            return sendToClient(
-                    (List<Object>) jarClassLoaderService.findAndInvokeSinglePublicMethod(
-                            classes,
-                            "Distributor",
-                            task.task()
-                    ),
-                    task.jar()
-            );
+    return sendToClient(distribution(task), task.jar());
+  }
 
-        } catch (Exception e) {
-            log.error("Ошибка при распределении задач", e);
-            throw new RuntimeException("Ошибка при распределении задач", e);
-        }
+  private List<Object> sendToClient(List<Object> subtasks, byte[] jar) {
+    List<List<?>> res = new ArrayList<>();
+
+    for (Object s : subtasks) {
+      res.add(client.calculateLatinSquare(new SubTaskRequest(s, jar)));
     }
 
-    private List<Object> sendToClient(List<Object> subtasks, byte[] jar) {
-        List<List<?>> res = new ArrayList<>();
+    return collectResults(res);
+  }
 
-        for (Object s : subtasks) {
-            res.add(client.calculateLatinSquare(new SubTaskRequest(s, jar)));
-        }
-
-        return collectResults(res);
+  private List<Object> distribution(TaskRequest task) {
+    try {
+      return (List<Object>)
+          jarClassLoaderService.findAndInvokeSinglePublicMethod(
+              classes, "Distributor", task.task());
+    } catch (Exception e) {
+      throw new RuntimeException("Ошибка при распределении задач", e);
     }
+  }
 
-    private List<Object> collectResults(List<List<?>> results) {
-        try {
-            return (List<Object>) jarClassLoaderService.findAndInvokeSinglePublicMethod(classes, "Collector", results);
-        } catch (Exception e) {
-            log.error("Ошибка при соединении результатов", e);
-            throw new RuntimeException("Ошибка при соединении результатов", e);
-        }
+  private List<Object> collectResults(List<List<?>> results) {
+    try {
+      return (List<Object>)
+          jarClassLoaderService.findAndInvokeSinglePublicMethod(classes, "Collector", results);
+    } catch (Exception e) {
+      log.error("Ошибка при соединении результатов", e);
+      throw new RuntimeException("Ошибка при соединении результатов", e);
     }
+  }
 }
