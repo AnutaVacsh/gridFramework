@@ -7,6 +7,7 @@ import ru.vaschenko.ComputingNode.dto.SubTaskRequest;
 import ru.vaschenko.ComputingNode.services.ComputingService;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -14,7 +15,7 @@ public class ComputingController implements ComputingApi {
     private final ComputingService computingService;
 
     @Override
-    public List<Object> calculateLatinSquare(SubTaskRequest subTask) {
+    public Map<String, Object> calculateLatinSquare(SubTaskRequest subTask) {
         return computingService.computingSubtask(subTask);
     }
 

@@ -1,3 +1,5 @@
 package ru.vaschenko.TaskCoordinator.dto;
 
-public record TaskRequest(Task task, byte[] jar) {}
+import java.util.Map;
+
+public record TaskRequest(Map<String, Object> args, byte[] jar) {}

@@ -8,11 +8,12 @@ import ru.vaschenko.ComputingNode.dto.SubTaskRequest;
 import ru.vaschenko.ComputingNode.util.ApiPath;
 
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping(ApiPath.BASE_URL)
 public interface ComputingApi {
     @PostMapping(ApiPath.CALCULATE_SUBTASK)
-    List<Object> calculateLatinSquare(@RequestBody SubTaskRequest subTask);
+    Map<String, Object> calculateLatinSquare(@RequestBody SubTaskRequest subTask);
 
     @GetMapping(ApiPath.PING)
     void ping();

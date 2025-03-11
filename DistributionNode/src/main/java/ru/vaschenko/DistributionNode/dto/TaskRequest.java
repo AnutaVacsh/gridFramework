@@ -1,3 +1,5 @@
 package ru.vaschenko.DistributionNode.dto;
 
-public record TaskRequest(Object task, byte[] jar) {}
+import java.util.Map;
+
+public record TaskRequest(Map<String, Object> args, byte[] jar) {}

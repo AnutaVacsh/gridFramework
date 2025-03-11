@@ -1,27 +1,30 @@
-package ru.vaschenko.TaskCoordinator.computation.impl;
+package ru.vaschenko.TaskCoordinator.computation;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.vaschenko.TaskCoordinator.computation.Distributor;
+import ru.vaschenko.TaskCoordinator.annotation.GridComponent;
+import ru.vaschenko.TaskCoordinator.annotation.GridMethod;
+import ru.vaschenko.TaskCoordinator.annotation.GridParam;
 import ru.vaschenko.TaskCoordinator.dto.SubTask;
 import ru.vaschenko.TaskCoordinator.dto.Task;
+import ru.vaschenko.TaskCoordinator.enams.TypeComponent;
 
 @Slf4j
-@Service
-@RequiredArgsConstructor
-public class DefaultDistributor implements Distributor<List<SubTask>, Task> {
+@GridComponent(TypeComponent.DISTRIBUTOR)
+public class DefaultDistributor{
     private static final long maxComputationsPerNode = 1000000;
 
-    @Override
-    public List<SubTask> generationSubtasks(Task task) {
+    @GridMethod
+    public List<Map<String, SubTask>> generationSubtasks(@GridParam(name = "task") Task task) {
 
-        List<SubTask> results = new ArrayList<>();
+        List<Map<String, SubTask>> results = new ArrayList<>();
 
         int m = task.alphabet().size();
         int treeLevel = calculatingTreeLevel(task.matrix(), m);
@@ -32,7 +35,7 @@ public class DefaultDistributor implements Distributor<List<SubTask>, Task> {
         for (BigInteger i = BigInteger.ZERO; i.compareTo(subTaskCount) < 0; i = i.add(BigInteger.ONE)) {
             SubTask subTask = new SubTask(treeLevel, i, task.matrix(), task.alphabet());
             log.debug("subtasks {}", subTask);
-            results.add(subTask);
+            results.add(Map.of("subTask", subTask));
         }
 
         return results;

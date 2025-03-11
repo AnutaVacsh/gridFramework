@@ -8,11 +8,12 @@ import ru.vaschenko.DistributionNode.dto.SubTaskRequest;
 import ru.vaschenko.DistributionNode.util.ApiPath;
 
 import java.util.List;
+import java.util.Map;
 
 @FeignClient(value = "work-node", url = "${client.worknode.url}")
 public interface ComputingNodeClient {
     @PostMapping(ApiPath.CALCULATE_SUBTASK)
-    List<Object> calculateLatinSquare(@RequestBody SubTaskRequest subTask);
+    Map<String, Object> calculateLatinSquare(@RequestBody SubTaskRequest subTask);
 
     @GetMapping(ApiPath.PING)
     void ping();

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Parameter;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;
@@ -11,14 +12,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.vaschenko.ComputingNode.annotation.GridComponent;
+import ru.vaschenko.ComputingNode.annotation.GridMethod;
+import ru.vaschenko.ComputingNode.annotation.GridParam;
+import ru.vaschenko.ComputingNode.enams.TypeComponent;
 
 @Slf4j
 @Service
 public class ClassLoaderService {
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * Загружает все классы из JAR-файла.
@@ -60,48 +67,52 @@ public class ClassLoaderService {
      * Ищет класс, который реализует интерфейс, и вызывает единственный публичный метод с переданными параметрами.
      *
      * @param classes         список загруженных классов
-     * @param interfaceName   имя интерфейса (без пакета)
+     * @param parameterValues   параметры
      * @param parameterValues список параметров, которые нужно передать в метод
      */
-    public Object findAndInvokeSinglePublicMethod(List<Class<?>> classes, String interfaceName, Object... parameterValues) throws Exception {
-        final Class<?> targetInterface = findInterface(classes, interfaceName);
+    public Object findAndInvokeSinglePublicMethod(
+            List<Class<?>> classes,
+            TypeComponent componentType,
+            Object parameterValues) throws Exception {
 
-        if (targetInterface == null) {
-            throw new RuntimeException("Не найден интерфейс с именем " + interfaceName);
-        }
+        @SuppressWarnings("unchecked")
+        Map<String, Object> paramsMap = (Map<String, Object>) parameterValues;
 
-        Class<?> targetClass = findImplementingClass(classes, targetInterface);
-
-        if (targetClass == null) {
-            throw new RuntimeException("Не найден класс, реализующий интерфейс " + interfaceName);
-        }
-
-        Method[] methods = targetClass.getDeclaredMethods();
-
-        Method targetMethod = Arrays.stream(methods)
-                .filter(method -> method.getModifiers() == Modifier.PUBLIC)
+        Class<?> targetClass = classes.stream()
+                .filter(cls -> cls.isAnnotationPresent(GridComponent.class))
+                .filter(cls -> cls.getAnnotation(GridComponent.class).value().name().equals(componentType.name()))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Не найден публичный метод в классе " + targetClass.getName()));
+                .orElseThrow(() ->
+                        new RuntimeException("Не найден класс с GridComponent типа " + componentType));
 
-        log.debug("Публичные методы класса {}", targetMethod);
-        log.debug("Передаём параметр {}", parameterValues[0]);
+        Method targetMethod = Arrays.stream(targetClass.getDeclaredMethods())
+                .filter(method -> method.isAnnotationPresent(GridMethod.class))
+                .findFirst()
+                .orElseThrow(() ->
+                        new RuntimeException("Не найден метод с GridMethod в классе " + targetClass.getName()));
 
-        Class<?>[] parameterTypes = targetMethod.getParameterTypes();
-        ObjectMapper objectMapper = new ObjectMapper();
+        log.debug("Вызываем метод {} из класса {}", targetMethod.getName(), targetClass.getSimpleName());
 
-        Object[] castedParameters = new Object[parameterValues.length];
-        for (int i = 0; i < parameterValues.length; i++) {
-            log.debug("Кастим {} к {}",parameterTypes[i], parameterTypes[i]);
-            if (parameterTypes[i].isInstance(parameterValues[i])) {
-                castedParameters[i] = parameterValues[i];
-            } else {
-                castedParameters[i] = objectMapper.convertValue(parameterValues[i], parameterTypes[i]);
+        Parameter[] parameters = targetMethod.getParameters();
+        Object[] castedParameters = new Object[parameters.length];
+
+        for (int i = 0; i < parameters.length; i++) {
+            GridParam annotation = parameters[i].getAnnotation(GridParam.class);
+            if (annotation == null) {
+                throw new RuntimeException("Все параметры метода должны быть помечены @GridParam");
             }
+
+            String paramName = annotation.name();
+            Object rawValue = paramsMap.get(paramName);
+            if (rawValue == null) {
+                throw new RuntimeException("Не найден параметр с именем " + paramName);
+            }
+
+            castedParameters[i] = objectMapper.convertValue(rawValue, parameters[i].getType());
         }
 
-        log.debug("Параметры: {}", Arrays.toString(castedParameters));
-
-        return targetMethod.invoke(targetClass.getDeclaredConstructor().newInstance(), castedParameters);
+        Object instance = targetClass.getDeclaredConstructor().newInstance();
+        return targetMethod.invoke(instance, castedParameters);
     }
 
     /**

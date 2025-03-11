@@ -1,15 +1,16 @@
 package ru.vaschenko.DistributionNode.services;
 
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.vaschenko.DistributionNode.client.ComputingNodeClintFacade;
 import ru.vaschenko.DistributionNode.dto.SubTaskRequest;
 import ru.vaschenko.DistributionNode.dto.TaskRequest;
-
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
+import ru.vaschenko.DistributionNode.enams.TypeComponent;
 
 @Slf4j
 @Service
@@ -30,33 +31,46 @@ public class DistributionServices {
     return sendToClient(distribution(task), task.jar());
   }
 
-  private List<Object> sendToClient(List<Object> subtasks, byte[] jar) {
-    List<List<?>> res = new ArrayList<>();
+  private List<Object> sendToClient(List<Map<String, Object>> subtasks, byte[] jar) {
+    List<Map<String, Object>> res = new ArrayList<>();
 
-    for (Object s : subtasks) {
+    for (Map<String, Object> s : subtasks) {
       res.add(client.calculateLatinSquare(new SubTaskRequest(s, jar)));
     }
 
-    return collectResults(res);
+    return collectResults(convertToList(res));
   }
 
-  private List<Object> distribution(TaskRequest task) {
+  private List<Map<String, Object>> distribution(TaskRequest task) {
     try {
-      return (List<Object>)
+      return (List<Map<String, Object>>)
           jarClassLoaderService.findAndInvokeSinglePublicMethod(
-              classes, "Distributor", task.task());
+              classes, TypeComponent.DISTRIBUTOR, task.args());
     } catch (Exception e) {
       throw new RuntimeException("Ошибка при распределении задач", e);
     }
   }
 
-  private List<Object> collectResults(List<List<?>> results) {
+  private List<Object> collectResults(Map<String, Object> results) {
     try {
       return (List<Object>)
-          jarClassLoaderService.findAndInvokeSinglePublicMethod(classes, "Collector", results);
+          jarClassLoaderService.findAndInvokeSinglePublicMethod(
+              classes, TypeComponent.COLLECTOR, results);
     } catch (Exception e) {
       log.error("Ошибка при соединении результатов", e);
       throw new RuntimeException("Ошибка при соединении результатов", e);
     }
+  }
+
+  private Map<String, Object> convertToList(List<Map<String, Object>> nodeResults) {
+    String key = nodeResults.get(0).keySet().iterator().next();
+
+    List<Object> allResults =
+        nodeResults.stream()
+            .map(map -> (List<Object>) map.values().iterator().next())
+            .flatMap(List::stream)
+            .toList();
+    
+    return Map.of(key, allResults);
   }
 }

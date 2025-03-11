@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.vaschenko.ComputingNode.dto.SubTaskRequest;
+import ru.vaschenko.ComputingNode.enams.TypeComponent;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -18,34 +20,34 @@ public class ComputingService {
 
   private List<Class<?>> classes = new ArrayList<>();
 
-  public List<Object> computingSubtask(SubTaskRequest subTask){
+  public Map<String, Object> computingSubtask(SubTaskRequest subTask){
     Path pathJar = jarStorageService.saveJar(subTask.jar());
     classes = jarClassLoaderService.loadAllClasses(pathJar);
 
-    List<List<Object>> gsbt = generate(subTask);
+    Map<String, Object> gsbt = generate(subTask);
     log.debug("Востановленная подзадача {}", gsbt);
 
-    List<Object> ssbt = solve(gsbt, subTask);
+    Map<String, Object> ssbt = solve(gsbt);
     log.debug("Решённая подзадача {}", ssbt);
 
     return ssbt;
   }
 
-  private List<List<Object>> generate(SubTaskRequest subTask) {
+  private Map<String, Object> generate(SubTaskRequest subTask) {
     try {
-      return (List<List<Object>>)
+      return (Map<String, Object>)
           jarClassLoaderService.findAndInvokeSinglePublicMethod(
-              classes, "Generator", subTask.subTask());
+              classes, TypeComponent.GENERATOR, subTask.args());
     } catch (Exception e) {
       throw new RuntimeException("Ошибка при генерации подзадач", e);
     }
   }
 
-  private List<Object> solve(List<List<Object>> restore, SubTaskRequest subTask) {
+  private Map<String, Object> solve(Map<String, Object> arg) {
       try {
-          return (List<Object>)
+          return ( Map<String, Object>)
                   jarClassLoaderService.findAndInvokeSinglePublicMethod(
-                          classes, "Solver", restore, subTask.subTask());
+                          classes, TypeComponent.SOLVER, arg);
       } catch (Exception e) {
           throw new RuntimeException("Ошибка при решении задачи", e);
       }

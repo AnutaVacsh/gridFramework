@@ -1,23 +1,26 @@
 package ru.vaschenko.TaskCoordinator.services;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.vaschenko.TaskCoordinator.annotation.GridComponent;
+import ru.vaschenko.TaskCoordinator.annotation.GridMethod;
+import ru.vaschenko.TaskCoordinator.annotation.GridParam;
 import ru.vaschenko.TaskCoordinator.client.DistributionNodeClintFacade;
-import ru.vaschenko.TaskCoordinator.computation.Collector;
-import ru.vaschenko.TaskCoordinator.computation.Distributor;
-import ru.vaschenko.TaskCoordinator.computation.Generator;
-import ru.vaschenko.TaskCoordinator.computation.Solver;
+import ru.vaschenko.TaskCoordinator.computation.DefaultCollector;
+import ru.vaschenko.TaskCoordinator.computation.DefaultDistributor;
+import ru.vaschenko.TaskCoordinator.computation.DefaultGenerator;
+import ru.vaschenko.TaskCoordinator.computation.DefaultSolver;
 import ru.vaschenko.TaskCoordinator.dto.ResultLatinSquare;
 import ru.vaschenko.TaskCoordinator.dto.SubTask;
 import ru.vaschenko.TaskCoordinator.dto.Task;
 import ru.vaschenko.TaskCoordinator.dto.TaskRequest;
+import ru.vaschenko.TaskCoordinator.enams.TypeComponent;
 
 @Slf4j
 @Service
@@ -25,66 +28,31 @@ import ru.vaschenko.TaskCoordinator.dto.TaskRequest;
 public class LatinSquareService {
 
   private final DistributionNodeClintFacade client;
-  private final CompilerServer compilerServer;
   private final JarPackingService jarPackingService;
-  private final Solver solverImpl;
-  private final Generator generatorImpl;
-  private final Distributor distributorImpl;
-  private final Collector collectorImpl;
 
   public List<ResultLatinSquare> solveTask(Task task) throws Exception {
+    Map<String, Object> args = new HashMap<>();
+    args.put("task", task);
 
     TaskRequest tr =
         new TaskRequest(
-            task,
+            args,
             jarPackingService.getJarBytes(
                 List.of(
-                    Distributor.class,
-                    Generator.class,
-                    Solver.class,
-                    Collector.class,
+                    TypeComponent.class,
+                    GridComponent.class,
+                    GridMethod.class,
+                    GridParam.class,
+                    DefaultDistributor.class,
+                    DefaultGenerator.class,
+                    DefaultSolver.class,
+                    DefaultCollector.class,
                     Task.class,
                     TaskRequest.class,
                     SubTask.class,
-                    ResultLatinSquare.class,
-                    distributorImpl.getClass(),
-                    generatorImpl.getClass(),
-                    solverImpl.getClass(),
-                    collectorImpl.getClass())));
+                    ResultLatinSquare.class)));
 
     log.debug("{}", tr);
     return client.submitTask(tr);
-
-    //    File distributorJavaFile = getJavaFilePath(distributor.getClass());
-    //    File generatorJavaFile = getJavaFilePath(generator.getClass());
-    //    File solverJavaFile = getJavaFilePath(solver.getClass());
-    //    File collectorJavaFile = getJavaFilePath(collector.getClass());
-    //
-    //    compilerServer.compileJavaFiles(
-    //        List.of(distributorJavaFile, generatorJavaFile, solverJavaFile, collectorJavaFile));
-    //
-    //    File distributorClassFile = getClassFilePath(distributor.getClass());
-    //    File generatorClassFile = getClassFilePath(generator.getClass());
-    //    File solverClassFile = getClassFilePath(solver.getClass());
-    //    File collectorClassFile = getClassFilePath(collector.getClass());
-    //
-    //    if (!generatorClassFile.exists()
-    //        || !solverClassFile.exists()
-    //        || !collectorClassFile.exists()
-    //        || !distributorClassFile.exists()) {
-    //      throw new FileNotFoundException("Class files not found after compilation!");
-    //    }
   }
-
-  //  private File getJavaFilePath(Class<?> clazz) throws IOException {
-  //    String className = clazz.getSimpleName() + ".java";
-  //    String packagePath = clazz.getPackageName().replace('.', '/');
-  //    return new File(new File("src/main/java/" + packagePath, className).getCanonicalPath());
-  //  }
-  //
-  //  private File getClassFilePath(Class<?> clazz) throws IOException {
-  //    String className = clazz.getSimpleName() + ".class";
-  //    String packagePath = clazz.getPackageName().replace('.', '/');
-  //    return new File(new File("temp/" + packagePath, className).getCanonicalPath());
-  //  }
 }

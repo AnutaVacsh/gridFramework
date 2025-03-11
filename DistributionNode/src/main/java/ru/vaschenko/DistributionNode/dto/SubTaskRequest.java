@@ -1,6 +1,8 @@
 package ru.vaschenko.DistributionNode.dto;
 
+import java.util.Map;
+
 public record SubTaskRequest(
-        Object subTask,
+        Map<String, Object> args,
         byte[] jar
 ) { }
