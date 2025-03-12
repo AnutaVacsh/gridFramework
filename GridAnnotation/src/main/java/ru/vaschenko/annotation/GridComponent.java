@@ -1,6 +1,6 @@
-package ru.vaschenko.TaskCoordinator.annotation;
+package ru.vaschenko.annotation;
 
-import ru.vaschenko.TaskCoordinator.enams.TypeComponent;
+import ru.vaschenko.enams.TypeComponent;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

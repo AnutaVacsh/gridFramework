@@ -38,7 +38,8 @@ public class DistributionServices {
       res.add(client.calculateLatinSquare(new SubTaskRequest(s, jar)));
     }
 
-    return collectResults(convertToList(res));
+    return convertToList(res);
+//    return collectResults(convertToList(res));
   }
 
   private List<Map<String, Object>> distribution(TaskRequest task) {
@@ -62,7 +63,8 @@ public class DistributionServices {
     }
   }
 
-  private Map<String, Object> convertToList(List<Map<String, Object>> nodeResults) {
+  private List<Object> convertToList(List<Map<String, Object>> nodeResults) {
+    log.debug("Начало конвертации в список. Получены nodeResults: {}", nodeResults);
     String key = nodeResults.get(0).keySet().iterator().next();
 
     List<Object> allResults =
@@ -70,7 +72,24 @@ public class DistributionServices {
             .map(map -> (List<Object>) map.values().iterator().next())
             .flatMap(List::stream)
             .toList();
-    
-    return Map.of(key, allResults);
+
+    log.debug("Конвертированные результаты: {}", allResults);
+
+    Map<String, Object> result = Map.of(key, allResults);
+    log.debug("Возвращаемый результат: {}", result);
+
+    return allResults;
+//    return result;
   }
 }
+
+/*
+[
+  [
+    {matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]},
+    {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]},
+    {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]},
+    {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}
+   ]
+ ]
+ */

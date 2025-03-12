@@ -81,6 +81,11 @@
 			<version>${org.jeasy.easy-random-core.test.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>ru.vaschenko</groupId>
+			<artifactId>GridAnnotation</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -92,6 +97,7 @@
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
+
 	</dependencyManagement>
 
 	<build>

@@ -3,14 +3,9 @@ package ru.vaschenko.TaskCoordinator.services;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.vaschenko.TaskCoordinator.annotation.GridComponent;
-import ru.vaschenko.TaskCoordinator.annotation.GridMethod;
-import ru.vaschenko.TaskCoordinator.annotation.GridParam;
 import ru.vaschenko.TaskCoordinator.client.DistributionNodeClintFacade;
 import ru.vaschenko.TaskCoordinator.computation.DefaultCollector;
 import ru.vaschenko.TaskCoordinator.computation.DefaultDistributor;
@@ -20,7 +15,6 @@ import ru.vaschenko.TaskCoordinator.dto.ResultLatinSquare;
 import ru.vaschenko.TaskCoordinator.dto.SubTask;
 import ru.vaschenko.TaskCoordinator.dto.Task;
 import ru.vaschenko.TaskCoordinator.dto.TaskRequest;
-import ru.vaschenko.TaskCoordinator.enams.TypeComponent;
 
 @Slf4j
 @Service
@@ -39,10 +33,6 @@ public class LatinSquareService {
             args,
             jarPackingService.getJarBytes(
                 List.of(
-                    TypeComponent.class,
-                    GridComponent.class,
-                    GridMethod.class,
-                    GridParam.class,
                     DefaultDistributor.class,
                     DefaultGenerator.class,
                     DefaultSolver.class,

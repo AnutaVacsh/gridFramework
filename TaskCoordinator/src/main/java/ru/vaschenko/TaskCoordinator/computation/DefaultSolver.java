@@ -1,13 +1,12 @@
 package ru.vaschenko.TaskCoordinator.computation;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import ru.vaschenko.TaskCoordinator.annotation.GridComponent;
-import ru.vaschenko.TaskCoordinator.annotation.GridMethod;
-import ru.vaschenko.TaskCoordinator.annotation.GridParam;
+import ru.vaschenko.annotation.GridComponent;
+import ru.vaschenko.annotation.GridMethod;
+import ru.vaschenko.annotation.GridParam;
+import ru.vaschenko.enams.TypeComponent;
 import ru.vaschenko.TaskCoordinator.dto.ResultLatinSquare;
 import ru.vaschenko.TaskCoordinator.dto.SubTask;
-import ru.vaschenko.TaskCoordinator.enams.TypeComponent;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

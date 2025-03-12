@@ -1,4 +1,4 @@
-package ru.vaschenko.TaskCoordinator.annotation;
+package ru.vaschenko.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

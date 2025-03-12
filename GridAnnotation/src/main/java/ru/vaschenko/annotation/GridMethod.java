@@ -1,4 +1,4 @@
-package ru.vaschenko.ComputingNode.annotation;
+package ru.vaschenko.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.PARAMETER)
-public @interface GridParam {
-    String name();
+@Target(ElementType.METHOD)
+public @interface GridMethod {
+    String description() default "";
 }

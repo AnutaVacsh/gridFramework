@@ -17,10 +17,10 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.vaschenko.ComputingNode.annotation.GridComponent;
-import ru.vaschenko.ComputingNode.annotation.GridMethod;
-import ru.vaschenko.ComputingNode.annotation.GridParam;
-import ru.vaschenko.ComputingNode.enams.TypeComponent;
+import ru.vaschenko.enams.TypeComponent;
+import ru.vaschenko.annotation.GridComponent;
+import ru.vaschenko.annotation.GridMethod;
+import ru.vaschenko.annotation.GridParam;
 
 @Slf4j
 @Service
@@ -66,30 +66,42 @@ public class ClassLoaderService {
     /**
      * Ищет класс, который реализует интерфейс, и вызывает единственный публичный метод с переданными параметрами.
      *
-     * @param classes         список загруженных классов
+     * @param loadedClasses         список загруженных классов
      * @param parameterValues   параметры
      * @param parameterValues список параметров, которые нужно передать в метод
      */
     public Object findAndInvokeSinglePublicMethod(
-            List<Class<?>> classes,
+            List<Class<?>> loadedClasses,
             TypeComponent componentType,
             Object parameterValues) throws Exception {
+
+        log.debug("Запуск findAndInvokeSinglePublicMethod с componentType: {}", componentType);
+        log.debug("Загруженные классы: {}", loadedClasses.stream().map(Class::getName).toList());
+        log.debug("Параметры перед конвертацией: {}", parameterValues);
 
         @SuppressWarnings("unchecked")
         Map<String, Object> paramsMap = (Map<String, Object>) parameterValues;
 
-        Class<?> targetClass = classes.stream()
+        Class<?> targetClass = loadedClasses.stream()
                 .filter(cls -> cls.isAnnotationPresent(GridComponent.class))
-                .filter(cls -> cls.getAnnotation(GridComponent.class).value().name().equals(componentType.name()))
+                .filter(cls -> {
+                    try {
+                        return cls.getAnnotation(GridComponent.class)
+                                .value().name().equals(componentType.name());
+                    } catch (Exception e) {
+                        log.error("Ошибка при получении значения аннотации GridComponent у класса {}", cls.getName(), e);
+                        return false;
+                    }
+                })
                 .findFirst()
-                .orElseThrow(() ->
-                        new RuntimeException("Не найден класс с GridComponent типа " + componentType));
+                .orElseThrow(() -> new RuntimeException("Не найден класс с GridComponent типа " + componentType));
+
+        log.debug("Найден целевой класс: {}", targetClass.getName());
 
         Method targetMethod = Arrays.stream(targetClass.getDeclaredMethods())
                 .filter(method -> method.isAnnotationPresent(GridMethod.class))
                 .findFirst()
-                .orElseThrow(() ->
-                        new RuntimeException("Не найден метод с GridMethod в классе " + targetClass.getName()));
+                .orElseThrow(() -> new RuntimeException("Не найден метод с GridMethod в классе " + targetClass.getName()));
 
         log.debug("Вызываем метод {} из класса {}", targetMethod.getName(), targetClass.getSimpleName());
 
@@ -97,21 +109,30 @@ public class ClassLoaderService {
         Object[] castedParameters = new Object[parameters.length];
 
         for (int i = 0; i < parameters.length; i++) {
-            GridParam annotation = parameters[i].getAnnotation(GridParam.class);
-            if (annotation == null) {
+            GridParam gridParam = parameters[i].getAnnotation(GridParam.class);
+            if (gridParam == null) {
                 throw new RuntimeException("Все параметры метода должны быть помечены @GridParam");
             }
-
-            String paramName = annotation.name();
+            String paramName = gridParam.name();
             Object rawValue = paramsMap.get(paramName);
             if (rawValue == null) {
                 throw new RuntimeException("Не найден параметр с именем " + paramName);
             }
 
+            log.debug("Конвертация параметра '{}' из типа {} в {}", paramName, rawValue.getClass().getSimpleName(), parameters[i].getType().getSimpleName());
             castedParameters[i] = objectMapper.convertValue(rawValue, parameters[i].getType());
         }
 
         Object instance = targetClass.getDeclaredConstructor().newInstance();
+        log.debug("Создан экземпляр класса {}", targetClass.getName());
+
+        log.debug("Типы параметров метода: {}", Arrays.toString(parameters));
+        log.debug("Переданные параметры: {}", Arrays.toString(castedParameters));
+
+        for (int i = 0; i < castedParameters.length; i++) {
+            log.debug("Тип параметра {}: {}, значение: {}", i, parameters[i].getType(), castedParameters[i]);
+        }
+
         return targetMethod.invoke(instance, castedParameters);
     }
 

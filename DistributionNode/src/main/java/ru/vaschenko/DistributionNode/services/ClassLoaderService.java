@@ -4,6 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.vaschenko.DistributionNode.enams.TypeComponent;
+import ru.vaschenko.annotation.GridComponent;
+import ru.vaschenko.annotation.GridMethod;
+import ru.vaschenko.annotation.GridParam;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -67,65 +70,58 @@ public class ClassLoaderService {
    * @param parameterValues список параметров, которые нужно передать в метод
    */
   public Object findAndInvokeSinglePublicMethod(
-          List<Class<?>> loadedClasses, // Список классов, загруженных через ClassLoader
+          List<Class<?>> loadedClasses,
           TypeComponent componentType,
           Object parameterValues) throws Exception {
 
-    @SuppressWarnings("unchecked")
-    Map<String, Object> paramsMap = (Map<String, Object>) parameterValues;
+      @SuppressWarnings("unchecked")
+      Map<String, Object> paramsMap = (Map<String, Object>) parameterValues;
 
-    // Загружаем аннотацию по имени, если она передается
-    Class<? extends Annotation> gridComponentAnnotation = findAnnotationBySimpleName(loadedClasses, "GridComponent");
+      Class<?> targetClass = loadedClasses.stream()
+              .filter(cls -> cls.isAnnotationPresent(GridComponent.class))
+              .filter(cls -> {
+                  try {
+                      return cls.getAnnotation(GridComponent.class)
+                              .value().name().equals(componentType.name());
+                  } catch (Exception e) {
+                      log.error("Ошибка при получении значения аннотации GridComponent у класса {}", cls.getName(), e);
+                      return false;
+                  }
+              })
+              .findFirst()
+              .orElseThrow(() -> new RuntimeException("Не найден класс с GridComponent типа " + componentType));
 
-    // Ищем класс, который содержит нужную аннотацию
-    Class<?> targetClass = loadedClasses.stream()
-            .filter(cls -> cls.isAnnotationPresent(gridComponentAnnotation))
-            .filter(cls -> cls.getAnnotation(gridComponentAnnotation).value().name().equals(componentType.name()))
-            .findFirst()
-            .orElseThrow(() -> new RuntimeException("Не найден класс с GridComponent типа " + componentType));
+      Method targetMethod = Arrays.stream(targetClass.getDeclaredMethods())
+              .filter(method -> method.isAnnotationPresent(GridMethod.class))
+              .findFirst()
+              .orElseThrow(() -> new RuntimeException("Не найден метод с GridMethod в классе " + targetClass.getName()));
 
-    // Ищем метод с аннотацией GridMethod в найденном классе
-    Class<? extends Annotation> gridMethodAnnotation = findAnnotationBySimpleName(loadedClasses, "GridMethod");
-    Method targetMethod = Arrays.stream(targetClass.getDeclaredMethods())
-            .filter(method -> method.isAnnotationPresent(gridMethodAnnotation))
-            .findFirst()
-            .orElseThrow(() -> new RuntimeException("Не найден метод с GridMethod в классе " + targetClass.getName()));
+      log.debug("Вызываем метод {} из класса {}", targetMethod.getName(), targetClass.getSimpleName());
 
-    log.debug("Вызываем метод {} из класса {}", targetMethod.getName(), targetClass.getSimpleName());
+      Parameter[] parameters = targetMethod.getParameters();
+      Object[] castedParameters = new Object[parameters.length];
 
-    // Получаем параметры метода и подготавливаем их
-    Parameter[] parameters = targetMethod.getParameters();
-    Object[] castedParameters = new Object[parameters.length];
-
-    for (int i = 0; i < parameters.length; i++) {
-      // Получаем аннотацию GridParam на параметре
-      GridParam gridParam = parameters[i].getAnnotation(GridParam.class);
-      if (gridParam == null) {
-        throw new RuntimeException("Все параметры метода должны быть помечены @GridParam");
+      for (int i = 0; i < parameters.length; i++) {
+          GridParam gridParam = parameters[i].getAnnotation(GridParam.class);
+          if (gridParam == null) {
+              throw new RuntimeException("Все параметры метода должны быть помечены @GridParam");
+          }
+          String paramName = gridParam.name();
+          Object rawValue = paramsMap.get(paramName);
+          if (rawValue == null) {
+              throw new RuntimeException("Не найден параметр с именем " + paramName);
+          }
+          castedParameters[i] = objectMapper.convertValue(rawValue, parameters[i].getType());
       }
-      String paramName = gridParam.name();
-      Object rawValue = paramsMap.get(paramName);
-      if (rawValue == null) {
-        throw new RuntimeException("Не найден параметр с именем " + paramName);
-      }
-      castedParameters[i] = objectMapper.convertValue(rawValue, parameters[i].getType());
-    }
 
-    // Создаем экземпляр класса и вызываем метод
-    Object instance = targetClass.getDeclaredConstructor().newInstance();
-    return targetMethod.invoke(instance, castedParameters);
+      Object instance = targetClass.getDeclaredConstructor().newInstance();
+
+      log.debug("Создан экземпляр класса {}", targetClass.getName());
+
+      log.debug("Типы параметров метода: {}", Arrays.toString(parameters));
+      log.debug("Переданные параметры: {}", Arrays.toString(castedParameters));
+      return targetMethod.invoke(instance, castedParameters);
   }
-
-  private Class<? extends Annotation> findAnnotationBySimpleName(List<Class<?>> loadedClasses, String annotationName) {
-    return loadedClasses.stream()
-            .flatMap(cls -> Arrays.stream(cls.getDeclaredAnnotations()))
-            .filter(annotation -> annotation.annotationType().getSimpleName().equals(annotationName))
-            .map(Annotation::annotationType)
-            .findFirst()
-            .orElseThrow(() -> new RuntimeException("Не найдена аннотация " + annotationName));
-  }
-
-
 
   private List<Class<?>> findClassWithAnnotationByName(String annotationName, List<Class<?>> loadedClasses) {
     List<Class<?>> matchedClasses = new ArrayList<>();

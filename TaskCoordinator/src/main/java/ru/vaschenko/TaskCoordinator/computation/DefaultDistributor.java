@@ -6,15 +6,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import ru.vaschenko.TaskCoordinator.annotation.GridComponent;
-import ru.vaschenko.TaskCoordinator.annotation.GridMethod;
-import ru.vaschenko.TaskCoordinator.annotation.GridParam;
+import ru.vaschenko.annotation.GridComponent;
+import ru.vaschenko.annotation.GridMethod;
+import ru.vaschenko.annotation.GridParam;
+import ru.vaschenko.enams.TypeComponent;
 import ru.vaschenko.TaskCoordinator.dto.SubTask;
 import ru.vaschenko.TaskCoordinator.dto.Task;
-import ru.vaschenko.TaskCoordinator.enams.TypeComponent;
 
 @Slf4j
 @GridComponent(TypeComponent.DISTRIBUTOR)

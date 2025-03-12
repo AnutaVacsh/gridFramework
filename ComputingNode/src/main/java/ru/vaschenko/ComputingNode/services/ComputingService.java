@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.vaschenko.ComputingNode.dto.SubTaskRequest;
-import ru.vaschenko.ComputingNode.enams.TypeComponent;
+import ru.vaschenko.enams.TypeComponent;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -27,10 +27,10 @@ public class ComputingService {
     Map<String, Object> gsbt = generate(subTask);
     log.debug("Востановленная подзадача {}", gsbt);
 
-    Map<String, Object> ssbt = solve(gsbt);
-    log.debug("Решённая подзадача {}", ssbt);
+    //    Map<String, Object> ssbt = solve(gsbt);
+    //    log.debug("Решённая подзадача {}", ssbt);
 
-    return ssbt;
+    return gsbt;
   }
 
   private Map<String, Object> generate(SubTaskRequest subTask) {

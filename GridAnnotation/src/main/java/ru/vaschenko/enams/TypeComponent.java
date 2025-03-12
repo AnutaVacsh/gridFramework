@@ -1,4 +1,4 @@
-package ru.vaschenko.TaskCoordinator.enams;
+package ru.vaschenko.enams;
 
 public enum TypeComponent {
     DISTRIBUTOR,

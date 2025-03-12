@@ -6,25 +6,29 @@ import java.util.List;
 import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
-import ru.vaschenko.TaskCoordinator.annotation.GridComponent;
-import ru.vaschenko.TaskCoordinator.annotation.GridMethod;
-import ru.vaschenko.TaskCoordinator.annotation.GridParam;
+import ru.vaschenko.TaskCoordinator.dto.ResultLatinSquare;
+import ru.vaschenko.annotation.GridComponent;
+import ru.vaschenko.annotation.GridMethod;
+import ru.vaschenko.annotation.GridParam;
+import ru.vaschenko.enams.TypeComponent;
 import ru.vaschenko.TaskCoordinator.dto.SubTask;
-import ru.vaschenko.TaskCoordinator.enams.TypeComponent;
 
 @Slf4j
 @GridComponent(TypeComponent.GENERATOR)
 public class DefaultGenerator {
+  DefaultSolver solver = new DefaultSolver();
 
   @GridMethod
-  public Map<String, Object> generate(@GridParam(name = "subTask") SubTask subTask) {
+  public Map<String, List<ResultLatinSquare>> generate(@GridParam(name = "subTask") SubTask subTask) {
     List<Integer> indices =
         convertToBaseM(subTask.number(), subTask.alphabet().size(), subTask.treeLevel());
-    return Map.of(
-        "restoreMatrix",
-        fillMatrix(subTask.matrix(), indices, subTask.alphabet()),
-        "subTask",
-        subTask);
+
+    return solver.solve(fillMatrix(subTask.matrix(), indices, subTask.alphabet()), subTask);
+//    return Map.of(
+//        "restoreMatrix",
+//        fillMatrix(subTask.matrix(), indices, subTask.alphabet()),
+//        "subTask",
+//        subTask);
   }
 
   private List<Integer> convertToBaseM(BigInteger number, int base, int length) {
