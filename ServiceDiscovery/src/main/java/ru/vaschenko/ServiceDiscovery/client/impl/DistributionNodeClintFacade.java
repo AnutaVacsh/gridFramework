@@ -1,11 +1,14 @@
-package ru.vaschenko.TaskCoordinator.client;
+package ru.vaschenko.ServiceDiscovery.client.impl;
 
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.vaschenko.TaskCoordinator.dto.ResultLatinSquare;
-import ru.vaschenko.TaskCoordinator.dto.TaskRequest;
+import ru.vaschenko.ServiceDiscovery.annotation.FeignRetryable;
+import ru.vaschenko.ServiceDiscovery.client.DistributionNodeClient;
+import ru.vaschenko.ServiceDiscovery.dto.TaskRequest;
+
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -14,10 +17,11 @@ public class DistributionNodeClintFacade implements DistributionNodeClient {
   private final DistributionNodeClient distributionNodeClient;
 
   @Override
-  public List<ResultLatinSquare> submitTask(TaskRequest taskRequest) {
+  @FeignRetryable
+  public List<Map<String, Object>> submitTask(TaskRequest taskRequest) {
     try {
       log.info("Sending request for work node in task, {}", taskRequest);
-      List<ResultLatinSquare> result = distributionNodeClient.submitTask(taskRequest);
+      List<Map<String, Object>> result = distributionNodeClient.submitTask(taskRequest);
       log.info("Received result for task");
       return result;
     } catch (Exception e) {

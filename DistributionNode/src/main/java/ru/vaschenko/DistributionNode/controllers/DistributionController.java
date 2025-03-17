@@ -7,6 +7,7 @@ import ru.vaschenko.DistributionNode.api.DistributionApi;
 import ru.vaschenko.DistributionNode.dto.TaskRequest;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -14,7 +15,7 @@ public class DistributionController implements DistributionApi {
     private final DistributionServices distributionServices;
 
     @Override
-    public List<Object> getSubTask(TaskRequest task) {
+    public List<Map<String, Object>> getSubTask(TaskRequest task) {
         return distributionServices.distribute(task);
     }
 }
