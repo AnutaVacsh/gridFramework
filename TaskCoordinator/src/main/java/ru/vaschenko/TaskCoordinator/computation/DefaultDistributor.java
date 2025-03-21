@@ -18,25 +18,33 @@ import ru.vaschenko.TaskCoordinator.dto.Task;
 @GridComponent(TypeComponent.DISTRIBUTOR)
 public class DefaultDistributor{
     private static final long maxComputationsPerNode = 1000000;
+    private static Integer treeLevel;
+    private static BigInteger number;
+    private static BigInteger subTaskCount;
 
     @GridMethod
-    public List<Map<String, SubTask>> generationSubtasks(@GridParam(name = "task") Task task) {
+    public Map<String, SubTask> generationSubtasks(@GridParam(name = "task") Task task) {
+        if(treeLevel == null && number == null){
+            int m = task.alphabet().size();
+            treeLevel = calculatingTreeLevel(task.matrix(), m);
+            log.debug("calculate tree level = {}", treeLevel);
 
-        List<Map<String, SubTask>> results = new ArrayList<>();
+            subTaskCount = BigInteger.valueOf(m).pow(treeLevel);
+            log.debug("calculate subTaskCount = {}", subTaskCount);
+            number = BigInteger.ZERO;
 
-        int m = task.alphabet().size();
-        int treeLevel = calculatingTreeLevel(task.matrix(), m);
-        log.debug("calculate tree level = {}", treeLevel);
-        BigInteger subTaskCount = BigInteger.valueOf(m).pow(treeLevel);
-        log.debug("calculate subTaskCount = {}", subTaskCount);
-
-        for (BigInteger i = BigInteger.ZERO; i.compareTo(subTaskCount) < 0; i = i.add(BigInteger.ONE)) {
-            SubTask subTask = new SubTask(treeLevel, i, task.matrix(), task.alphabet());
+            SubTask subTask = new SubTask(treeLevel, number, task.matrix(), task.alphabet());
             log.debug("subtasks {}", subTask);
-            results.add(Map.of("subTask", subTask));
+            return Map.of("subTask", subTask);
+        }
+        else if(number.compareTo(subTaskCount) >= 0){
+            return null;
         }
 
-        return results;
+        number = number.add(BigInteger.ONE);
+        SubTask subTask = new SubTask(treeLevel, number, task.matrix(), task.alphabet());
+        log.debug("subtasks {}", subTask);
+        return Map.of("subTask", subTask);
     }
 
     /**

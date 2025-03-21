@@ -4,6 +4,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.vaschenko.TaskCoordinator.annotation.FeignRetryable;
 import ru.vaschenko.TaskCoordinator.dto.FullTaskRequest;
 import ru.vaschenko.TaskCoordinator.dto.ResultLatinSquare;
 import ru.vaschenko.TaskCoordinator.dto.TaskRequest;
@@ -15,6 +16,7 @@ public class ServiceDiscoveryClintFacade implements ServiceDiscoveryClient {
   private final ServiceDiscoveryClient serviceDiscoveryClient;
 
   @Override
+  @FeignRetryable
   public List<ResultLatinSquare> submitTask(FullTaskRequest taskRequest) {
     try {
       log.info("Sending request for work node in task, {}", taskRequest);
