@@ -11,4 +11,7 @@ public interface NodeManagementApi {
 
     @PostMapping(ApiPath.NODE_REGISTER)
     void nodeRegister(@RequestBody NodeRegisterDto nodeRegisterDto);
+
+    @PostMapping(ApiPath.NODE_DETACH)
+    void nodeDetach(String nodeUrl);
 }

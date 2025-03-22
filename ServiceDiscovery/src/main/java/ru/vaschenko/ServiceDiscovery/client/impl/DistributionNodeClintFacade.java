@@ -18,10 +18,10 @@ public class DistributionNodeClintFacade implements DistributionNodeClient {
 
   @Override
   @FeignRetryable
-  public List<Map<String, Object>> submitTask(TaskRequest taskRequest) {
+  public Map<String, Object> submitTask(TaskRequest taskRequest) {
     try {
       log.info("Sending request for work node in task, {}", taskRequest);
-      List<Map<String, Object>> result = distributionNodeClient.submitTask(taskRequest);
+      Map<String, Object> result = distributionNodeClient.submitTask(taskRequest);
       log.info("Received result for task");
       return result;
     } catch (Exception e) {

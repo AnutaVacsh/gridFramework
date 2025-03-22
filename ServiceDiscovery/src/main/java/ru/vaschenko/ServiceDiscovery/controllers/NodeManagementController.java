@@ -18,4 +18,9 @@ public class NodeManagementController implements NodeManagementApi {
         log.info("Регистрация ноды {}", nodeRegisterDto);
         nodeManagementService.nodeRegister(nodeRegisterDto);
     }
+
+    @Override
+    public void nodeDetach(String nodeUrl) {
+
+    }
 }

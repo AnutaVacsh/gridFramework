@@ -1,50 +1,874 @@
-2025-03-18T08:37:10.858+04:00  INFO 12668 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : Starting TaskCoordinatorApplication using Java 17.0.12 with PID 12668 (C:\Users\Ann\Desktop\study\огв\grid framework\TaskCoordinator\target\classes started by Ann in C:\Users\Ann\Desktop\study\огв\grid framework\TaskCoordinator)
-2025-03-18T08:37:10.994+04:00 DEBUG 12668 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : Running with Spring Boot v3.3.5, Spring v6.1.14
-2025-03-18T08:37:11.025+04:00  INFO 12668 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-03-18T08:37:50.665+04:00  INFO 12668 --- [TaskCoordinator] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c41c95a8-2ed3-317f-a5da-c5d3350155ea
-2025-03-18T08:37:58.258+04:00  INFO 12668 --- [TaskCoordinator] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-03-18T08:37:59.048+04:00  INFO 12668 --- [TaskCoordinator] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-18T08:37:59.068+04:00  INFO 12668 --- [TaskCoordinator] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-03-18T08:38:03.670+04:00  INFO 12668 --- [TaskCoordinator] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-18T08:38:03.670+04:00  INFO 12668 --- [TaskCoordinator] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 50793 ms
-2025-03-18T08:38:31.359+04:00  INFO 12668 --- [TaskCoordinator] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-03-18T08:38:38.995+04:00  INFO 12668 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : Started TaskCoordinatorApplication in 96.733 seconds (process running for 102.675)
-2025-03-18T08:39:40.103+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-18T08:39:40.103+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-18T08:39:40.103+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-03-18T08:39:46.220+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2050 ms
-2025-03-18T08:40:00.905+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Файлы для упаковки:
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
-2025-03-18T08:40:00.918+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-4719819588072732618.jar
-2025-03-18T08:40:00.918+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
-2025-03-18T08:40:00.918+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
-2025-03-18T08:40:00.918+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
-2025-03-18T08:40:00.935+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
-2025-03-18T08:40:00.935+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
-2025-03-18T08:40:00.935+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Файлы для упаковки:
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
-2025-03-18T08:40:01.002+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
-2025-03-18T08:40:01.019+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-1157320098168464150.jar
-2025-03-18T08:40:01.019+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
-2025-03-18T08:40:01.019+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
-2025-03-18T08:40:01.019+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
-2025-03-18T08:40:01.019+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
-2025-03-18T08:40:01.099+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
-2025-03-18T08:40:01.099+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
-2025-03-18T08:40:01.099+04:00 DEBUG 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@5ffaba7e, jarToComp=[B@1eddfe5e]
-2025-03-18T08:40:01.115+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@5ffaba7e, jarToComp=[B@1eddfe5e]
-2025-03-18T08:40:04.837+04:00  INFO 12668 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.c.ServiceDiscoveryClintFacade      : Received result for task
+2025-03-22T18:40:38.679+04:00  INFO 3964 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : Starting TaskCoordinatorApplication using Java 17.0.12 with PID 3964 (C:\Users\Ann\Desktop\study\огв\grid framework\TaskCoordinator\target\classes started by Ann in C:\Users\Ann\Desktop\study\огв\grid framework\TaskCoordinator)
+2025-03-22T18:40:38.706+04:00 DEBUG 3964 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-03-22T18:40:38.707+04:00  INFO 3964 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-22T18:41:01.395+04:00  INFO 3964 --- [TaskCoordinator] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c41c95a8-2ed3-317f-a5da-c5d3350155ea
+2025-03-22T18:41:08.096+04:00  INFO 3964 --- [TaskCoordinator] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-22T18:41:08.112+04:00  INFO 3964 --- [TaskCoordinator] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-22T18:41:08.112+04:00  INFO 3964 --- [TaskCoordinator] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-03-22T18:41:08.241+04:00  INFO 3964 --- [TaskCoordinator] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-22T18:41:08.241+04:00  INFO 3964 --- [TaskCoordinator] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 29366 ms
+2025-03-22T18:41:22.206+04:00  INFO 3964 --- [TaskCoordinator] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-22T18:41:24.592+04:00  INFO 3964 --- [TaskCoordinator] [main] r.v.T.TaskCoordinatorApplication         : Started TaskCoordinatorApplication in 51.782 seconds (process running for 57.527)
+2025-03-22T18:44:02.611+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-22T18:44:02.611+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-22T18:44:02.615+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-03-22T18:44:08.916+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 882 ms
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T18:44:18.608+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-16287436262779100626.jar
+2025-03-22T18:44:18.624+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T18:44:18.624+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T18:44:18.624+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T18:44:18.624+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T18:44:18.624+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T18:44:18.632+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T18:44:18.761+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-11982582736531893242.jar
+2025-03-22T18:44:18.777+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T18:44:18.782+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T18:44:18.782+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T18:44:18.782+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T18:44:18.851+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T18:44:18.851+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T18:44:18.851+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@2e17e6be, jarToComp=[B@4454d35d]
+2025-03-22T18:44:18.875+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@2e17e6be, jarToComp=[B@4454d35d]
+2025-03-22T18:45:06.981+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: Unexpected end of file from server executing POST http://localhost:8083/serviceDiscovery/taskM/
+2025-03-22T18:45:06.998+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+java.net.SocketException: Unexpected end of file from server
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:954) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:761) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1709) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1610) ~[na:na]
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:529) ~[na:na]
+	at feign.Client$Default.convertResponse(Client.java:111) ~[feign-core-13.2.1.jar:na]
+	at feign.Client$Default.execute(Client.java:107) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:100) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:12:10.126+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-14750948160937688390.jar
+2025-03-22T19:12:10.126+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:12:10.126+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:12:10.126+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:12:10.126+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:12:10.141+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:12:10.141+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:12:10.305+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-4066145368477024398.jar
+2025-03-22T19:12:10.321+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:12:10.321+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:12:10.321+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:12:10.321+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:12:10.400+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:12:10.400+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:12:10.400+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@59de2e9d, jarToComp=[B@27e0ee3e]
+2025-03-22T19:12:10.401+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@59de2e9d, jarToComp=[B@27e0ee3e]
+2025-03-22T19:12:37.905+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: Unexpected end of file from server executing POST http://localhost:8083/serviceDiscovery/taskM/
+2025-03-22T19:12:37.905+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+java.net.SocketException: Unexpected end of file from server
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:954) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:761) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1709) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1610) ~[na:na]
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:529) ~[na:na]
+	at feign.Client$Default.convertResponse(Client.java:111) ~[feign-core-13.2.1.jar:na]
+	at feign.Client$Default.execute(Client.java:107) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:100) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:20:35.728+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-17543076790767660769.jar
+2025-03-22T19:20:35.745+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:20:35.745+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:20:35.745+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:20:35.745+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:20:35.745+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:20:35.745+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:20:35.855+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:20:35.872+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:20:35.876+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-15657216020640161214.jar
+2025-03-22T19:20:35.882+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:20:35.883+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:20:35.883+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:20:35.887+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:20:35.980+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:20:35.980+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:20:35.980+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@1a2efeeb, jarToComp=[B@1d96a4df]
+2025-03-22T19:20:35.980+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@1a2efeeb, jarToComp=[B@1d96a4df]
+2025-03-22T19:20:51.620+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: Unexpected end of file from server executing POST http://localhost:8083/serviceDiscovery/taskM/
+2025-03-22T19:20:51.635+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+java.net.SocketException: Unexpected end of file from server
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:954) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:761) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1709) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1610) ~[na:na]
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:529) ~[na:na]
+	at feign.Client$Default.convertResponse(Client.java:111) ~[feign-core-13.2.1.jar:na]
+	at feign.Client$Default.execute(Client.java:107) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:100) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:27:26.331+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-13677859784628453453.jar
+2025-03-22T19:27:26.347+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:27:26.352+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:27:26.352+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:27:26.352+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:27:26.358+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:27:26.358+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:27:26.467+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:27:26.483+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-15702006183536916594.jar
+2025-03-22T19:27:26.483+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:27:26.483+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:27:26.483+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:27:26.483+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:27:26.568+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:27:26.585+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:27:26.585+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@6fca2f4c, jarToComp=[B@610ddcc5]
+2025-03-22T19:27:26.585+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@6fca2f4c, jarToComp=[B@610ddcc5]
+2025-03-22T19:27:31.326+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: Unexpected end of file from server executing POST http://localhost:8083/serviceDiscovery/taskM/
+2025-03-22T19:27:31.326+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+java.net.SocketException: Unexpected end of file from server
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:954) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:761) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1709) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1610) ~[na:na]
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:529) ~[na:na]
+	at feign.Client$Default.convertResponse(Client.java:111) ~[feign-core-13.2.1.jar:na]
+	at feign.Client$Default.execute(Client.java:107) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:100) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:31:37.753+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-10842933382915006986.jar
+2025-03-22T19:31:37.776+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:31:37.776+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:31:37.776+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:31:37.776+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:31:37.776+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:31:37.776+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:31:37.918+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:31:37.926+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-13134851901671975993.jar
+2025-03-22T19:31:37.941+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:31:37.941+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:31:37.941+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:31:37.941+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:31:38.030+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:31:38.030+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:31:38.030+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@3b90477f, jarToComp=[B@3557ae7d]
+2025-03-22T19:31:38.030+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@3b90477f, jarToComp=[B@3557ae7d]
+2025-03-22T19:31:38.982+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:31:38.891+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+2025-03-22T19:31:38.982+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+feign.FeignException$InternalServerError: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:31:38.891+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+	at feign.FeignException.serverErrorStatus(FeignException.java:259) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:206) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:33:48.088+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-8018386175820828229.jar
+2025-03-22T19:33:48.088+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:33:48.088+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:33:48.099+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:33:48.099+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:33:48.099+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:33:48.099+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:33:48.248+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-12901336545428966370.jar
+2025-03-22T19:33:48.248+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:33:48.248+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:33:48.248+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:33:48.257+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:33:48.341+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:33:48.341+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:33:48.346+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@4ba0b569, jarToComp=[B@ea23279]
+2025-03-22T19:33:48.346+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@4ba0b569, jarToComp=[B@ea23279]
+2025-03-22T19:33:53.359+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:33:53.327+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+2025-03-22T19:33:53.359+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+feign.FeignException$InternalServerError: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:33:53.327+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+	at feign.FeignException.serverErrorStatus(FeignException.java:259) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:206) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:38:05.501+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:38:05.501+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:38:05.520+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-16588014099081261960.jar
+2025-03-22T19:38:05.520+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:38:05.520+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:38:05.520+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:38:05.520+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:38:05.536+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:38:05.536+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:38:05.672+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-11070085434540500469.jar
+2025-03-22T19:38:05.672+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:38:05.672+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:38:05.672+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:38:05.688+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:38:05.766+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:38:05.766+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:38:05.766+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@262aa276, jarToComp=[B@28ed58c3]
+2025-03-22T19:38:05.766+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@262aa276, jarToComp=[B@28ed58c3]
+2025-03-22T19:38:06.003+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:38:05.986+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+2025-03-22T19:38:06.018+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+feign.FeignException$InternalServerError: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:38:05.986+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+	at feign.FeignException.serverErrorStatus(FeignException.java:259) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:206) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:45:32.064+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:45:32.065+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:45:32.066+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:45:32.067+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:45:32.069+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:45:32.069+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:45:32.069+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:45:32.069+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:45:32.069+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:45:32.075+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-14268923110555857907.jar
+2025-03-22T19:45:32.076+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:45:32.076+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:45:32.089+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:45:32.091+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:45:32.091+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:45:32.091+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:45:32.274+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:45:32.274+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:45:32.274+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:45:32.274+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:45:32.274+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:45:32.276+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:45:32.276+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:45:32.276+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:45:32.276+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:45:32.278+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-11434067184281284261.jar
+2025-03-22T19:45:32.281+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:45:32.290+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:45:32.293+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:45:32.293+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:45:32.360+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:45:32.360+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:45:32.360+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@2a676cf0, jarToComp=[B@7e1f3d7f]
+2025-03-22T19:45:32.360+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@2a676cf0, jarToComp=[B@7e1f3d7f]
+2025-03-22T19:45:32.609+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] r.v.T.c.ServiceDiscoveryClintFacade      : Error occurred while calculating Latin Square for task: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:45:32.573+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+2025-03-22T19:45:32.609+04:00 ERROR 3964 --- [TaskCoordinator] [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error calculating Latin Square for task] with root cause
+
+feign.FeignException$InternalServerError: [500] during [POST] to [http://localhost:8083/serviceDiscovery/taskM/] [ServiceDiscoveryClient#submitTask(FullTaskRequest)]: [{"timestamp":"2025-03-22T15:45:32.573+00:00","status":500,"error":"Internal Server Error","path":"/serviceDiscovery/taskM/"}]
+	at feign.FeignException.serverErrorStatus(FeignException.java:259) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:206) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.submitTask(Unknown Source) ~[na:na]
+	at ru.vaschenko.TaskCoordinator.client.ServiceDiscoveryClintFacade.submitTask(ServiceDiscoveryClintFacade.java:23) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.services.LatinSquareService.solveTask(LatinSquareService.java:54) ~[classes/:na]
+	at ru.vaschenko.TaskCoordinator.controllers.LatinSquareController.solveTask(LatinSquareController.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Всего классов для упаковки: 6
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/Task.class
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/TaskRequest.class
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:47:01.315+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:47:01.324+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-1243178175352468339.jar
+2025-03-22T19:47:01.328+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultDistributor.class в JAR
+2025-03-22T19:47:01.328+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultCollector.class в JAR
+2025-03-22T19:47:01.328+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/Task.class в JAR
+2025-03-22T19:47:01.328+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/TaskRequest.class в JAR
+2025-03-22T19:47:01.340+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:47:01.340+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 8188 байт
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : ==> Начинаем упаковку JAR-файла...
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Всего классов для упаковки: 4
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Файлы для упаковки:
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/SubTask.class
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         :   - ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class
+2025-03-22T19:47:01.404+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Временный JAR-файл создан: C:\Users\Ann\AppData\Local\Temp\classes-12453048794323419070.jar
+2025-03-22T19:47:01.404+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultGenerator.class в JAR
+2025-03-22T19:47:01.404+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/computation/DefaultSolver.class в JAR
+2025-03-22T19:47:01.404+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/SubTask.class в JAR
+2025-03-22T19:47:01.421+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Добавлен файл ru/vaschenko/TaskCoordinator/dto/ResultLatinSquare.class в JAR
+2025-03-22T19:47:01.491+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : JAR-файл успешно создан, размер: 7152 байт
+2025-03-22T19:47:01.491+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.JarPackingService         : Временный JAR-файл удалён
+2025-03-22T19:47:01.491+04:00 DEBUG 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.services.LatinSquareService        : FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@5651315e, jarToComp=[B@1353b5f0]
+2025-03-22T19:47:01.491+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.c.ServiceDiscoveryClintFacade      : Sending request for work node in task, FullTaskRequest[args={task=Task[alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]]}, jarToDist=[B@5651315e, jarToComp=[B@1353b5f0]
+2025-03-22T19:47:03.685+04:00  INFO 3964 --- [TaskCoordinator] [http-nio-8080-exec-5] r.v.T.c.ServiceDiscoveryClintFacade      : Received result for task

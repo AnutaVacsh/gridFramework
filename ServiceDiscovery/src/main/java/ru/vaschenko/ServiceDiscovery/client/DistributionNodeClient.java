@@ -13,5 +13,5 @@ import java.util.Map;
 public interface DistributionNodeClient {
 
   @PostMapping(value = ApiPath.CALCULATE_SQUARE)
-  List<Map<String, Object>> submitTask(@RequestBody TaskRequest taskRequest);
+  Map<String, Object> submitTask(@RequestBody TaskRequest taskRequest);
 }

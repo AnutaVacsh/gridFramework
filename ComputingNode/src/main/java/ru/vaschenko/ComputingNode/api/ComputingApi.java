@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ru.vaschenko.ComputingNode.dto.NodeRegisterDto;
 import ru.vaschenko.ComputingNode.dto.SubTaskRequest;
 import ru.vaschenko.ComputingNode.util.ApiPath;
 
@@ -16,4 +17,10 @@ public interface ComputingApi {
 
     @GetMapping(ApiPath.PING)
     void ping();
+
+    @PostMapping(ApiPath.REGISTER)
+    void nodeRegister(@RequestBody NodeRegisterDto nodeRegisterDto);
+
+    @PostMapping(ApiPath.DETACH)
+    void nodeDetach(String nodeUrl);
 }

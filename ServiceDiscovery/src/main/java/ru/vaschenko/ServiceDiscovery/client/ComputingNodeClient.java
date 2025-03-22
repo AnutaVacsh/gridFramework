@@ -12,7 +12,7 @@ import java.util.Map;
 @FeignClient(value = "comp-node", url = "${client.compnode.url}")
 public interface ComputingNodeClient {
     @PostMapping(ApiPath.CALCULATE_SUBTASK)
-    Map<String, Object> calculateLatinSquare(@RequestBody SubTaskRequest subTask);
+    Map<String, Object> calculate(@RequestBody SubTaskRequest subTask);
 
     @GetMapping(ApiPath.PING)
     void ping();

@@ -23,10 +23,10 @@ public class DistributionServices {
   private List<Class<?>> classes = new ArrayList<>();
 
   /** распределить задачи на подзадачи */
-  public List<Map<String, Object>> distribute(TaskRequest task) {
+  public Map<String, Object> distribute(TaskRequest task) {
     Path jarPath = jarStorageService.saveJar(task.jar());
 
-    classes = jarClassLoaderService.loadAllClasses(jarPath);
+    if (classes.isEmpty()) classes = jarClassLoaderService.loadAllClasses(jarPath);
 
     return distribution(task);
   }
@@ -42,9 +42,9 @@ public class DistributionServices {
 ////    return collectResults(convertToList(res));
 //  }
 
-  private List<Map<String, Object>> distribution(TaskRequest task) {
+  private Map<String, Object> distribution(TaskRequest task) {
     try {
-      return (List<Map<String, Object>>)
+      return (Map<String, Object>)
           jarClassLoaderService.findAndInvokeSinglePublicMethod(
               classes, TypeComponent.DISTRIBUTOR, task.args());
     } catch (Exception e) {

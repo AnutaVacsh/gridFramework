@@ -2,6 +2,7 @@ package ru.vaschenko.ServiceDiscovery.registry;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
+import ru.vaschenko.ServiceDiscovery.dto.SubTaskRequest;
 
 import java.time.LocalDateTime;
 
@@ -9,6 +10,6 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 public class NodeInformation {
     private String nodeUrl;
-    private int taskId;
+    private SubTaskRequest subTaskRequest;
     private LocalDateTime lastResponseTime;
 }

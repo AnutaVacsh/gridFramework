@@ -17,7 +17,6 @@ public class TaskManagementController implements TaskManagementApi {
 
     @Override
     public List<Object> submitTask(FullTaskRequest taskRequest) {
-        log.info("Пришла задачка {}", taskRequest);
         return taskManagementService.submitTask(taskRequest);
     }
 }

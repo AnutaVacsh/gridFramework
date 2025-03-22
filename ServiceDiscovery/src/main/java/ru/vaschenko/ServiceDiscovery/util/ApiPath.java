@@ -7,6 +7,7 @@ public class ApiPath {
     public static final String BASE_URL = "serviceDiscovery/";
     public static final String NODE_M = BASE_URL + "nodeM/";
     public static final String NODE_REGISTER = "register";
+    public static final String NODE_DETACH = "detach";
 
     public static final String TASK_M = BASE_URL + "taskM/";
 

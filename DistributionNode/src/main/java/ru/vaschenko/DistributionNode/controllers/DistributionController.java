@@ -15,7 +15,7 @@ public class DistributionController implements DistributionApi {
     private final DistributionServices distributionServices;
 
     @Override
-    public List<Map<String, Object>> getSubTask(TaskRequest task) {
+    public Map<String, Object> getSubTask(TaskRequest task) {
         return distributionServices.distribute(task);
     }
 }
