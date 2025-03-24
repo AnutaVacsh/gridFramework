@@ -13,6 +13,7 @@ public class ApiPath {
 
     public static final String CLIENT_DISTRIBUTION_URL = "distributionNode/";
     public static final String CALCULATE_SQUARE = CLIENT_DISTRIBUTION_URL + "submit/task";
+    public static final String CLEAR = CLIENT_DISTRIBUTION_URL + "clear";
 
     public static final String CLIENT_COMPUTING_URL = "computingNode/";
     public static final String CALCULATE_SUBTASK = CLIENT_COMPUTING_URL + "submit/subtask";

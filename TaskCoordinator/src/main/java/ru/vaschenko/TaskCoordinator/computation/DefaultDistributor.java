@@ -17,7 +17,7 @@ import ru.vaschenko.TaskCoordinator.dto.Task;
 @Slf4j
 @GridComponent(TypeComponent.DISTRIBUTOR)
 public class DefaultDistributor{
-    private static final long maxComputationsPerNode = 1000000;
+    private static final long maxComputationsPerNode = 50000000;
     private static Integer treeLevel;
     private static BigInteger number;
     private static BigInteger subTaskCount;
