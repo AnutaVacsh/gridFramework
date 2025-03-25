@@ -20,14 +20,16 @@ public class NotifyService {
     private final Feign.Builder feignBuilder;
     private final TaskManagementService taskManagementService;
 
-    @Scheduled(fixedRate = 5 * 60 * 1000)
+    @Scheduled(fixedRate = 60 * 1000)
     public void pollNodes() {
         List<NodeInformation> allNodes = NodeRegistry.getAllNodes();
         for (NodeInformation node : allNodes) {
             log.info("notify node {}", node.getNodeUrl());
             try{
                 getComputingNodeClientForHost(node.getNodeUrl()).ping();
+                log.info("Нода {} отаетила", node.getNodeUrl());
             }catch (FeignException e){
+                log.warn("Нода {} не отаетила", node.getNodeUrl());
                 //перенаправляем его задачку
                 if(node.getSubTaskRequest() != null) redirectSubTask(node.getSubTaskRequest());
 

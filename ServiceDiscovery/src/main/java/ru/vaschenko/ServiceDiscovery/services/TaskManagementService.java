@@ -38,6 +38,11 @@ public class TaskManagementService {
     List<Map<String, Object>> listRes = new ArrayList<>();
 
     while(true) {
+      if(NodeRegistry.getDistributionNodes() == null){
+        log.info("Распределительная нода не найдена!!!");
+        break;
+      }
+
       if(subtaskQueue.isEmpty()){
         subtask = nextSubtask(new TaskRequest(fullTaskRequest.args(), fullTaskRequest.jarToDist()));
         log.info("Следующая подзадача {}", subtask);
@@ -71,6 +76,10 @@ public class TaskManagementService {
   }
 
   private NodeInformation waitForAvailableNode() {
+    if (NodeRegistry.getAllNodes().isEmpty()){
+      log.info("Вычислительных нод нет(((");
+      return null;
+    }
     while (true) {
       NodeInformation workNode = NodeRegistry.getNextNode();
 

@@ -17,6 +17,6 @@ public class TaskManagementController implements TaskManagementApi {
 
     @Override
     public List<Object> submitTask(FullTaskRequest taskRequest) {
-        return taskManagementService.submitTask(taskRequest);
+        return taskManagementService.calculateTask(taskRequest);
     }
 }
