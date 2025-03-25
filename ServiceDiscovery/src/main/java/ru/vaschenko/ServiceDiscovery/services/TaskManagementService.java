@@ -1,9 +1,14 @@
 package ru.vaschenko.ServiceDiscovery.services;
 
 import feign.Feign;
+
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,19 +27,27 @@ public class TaskManagementService {
   private final Feign.Builder feignBuilder;
 
   private static final long POLL_INTERVAL_MS = 1000;
+  private Deque<SubTaskRequest> subtaskQueue = new ArrayDeque<>();
 
-  public List<Object> submitTask(FullTaskRequest fullTaskRequest) {
+  public List<Object> calculateTask(FullTaskRequest fullTaskRequest) {
     log.info("Начинаем решение задачи {}", fullTaskRequest);
     clearDistributor();
 
     Map<String, Object> subtask;
+    SubTaskRequest str;
     List<Map<String, Object>> listRes = new ArrayList<>();
 
     while(true) {
-      subtask = nextSubtask(new TaskRequest(fullTaskRequest.args(), fullTaskRequest.jarToDist()));
-      log.info("Следующая подзадача {}", subtask);
+      if(subtaskQueue.isEmpty()){
+        subtask = nextSubtask(new TaskRequest(fullTaskRequest.args(), fullTaskRequest.jarToDist()));
+        log.info("Следующая подзадача {}", subtask);
 
-      if(subtask == null) break;
+        if(subtask == null) break;
+
+        str = new SubTaskRequest(subtask, fullTaskRequest.jarToComp());
+      } else {
+        str = pollSubtaskQueue();
+      }
 
       NodeInformation workNode = waitForAvailableNode();
 
@@ -43,13 +56,14 @@ public class TaskManagementService {
         break;
       }
 
-      SubTaskRequest str = new SubTaskRequest(subtask, fullTaskRequest.jarToComp());
       workNode.setSubTaskRequest(str);
       log.info("Новая подзадачка {}", str);
+
       ComputingNodeClient client = getComputingNodeClientForHost(workNode.getNodeUrl());
       Map<String, Object> res = client.calculate(str);
       log.info("Решение подзадачки {}", res);
       listRes.add(res);
+
       workNode.setSubTaskRequest(null);
     }
 
@@ -108,5 +122,13 @@ public class TaskManagementService {
 
   public DistributionNodeClient getNodeClientForHost(String host) {
     return feignBuilder.target(DistributionNodeClient.class, host);
+  }
+
+  public void pushSubtaskQueue(SubTaskRequest subTaskRequest){
+    subtaskQueue.addLast(subTaskRequest);
+  }
+
+  public SubTaskRequest pollSubtaskQueue(){
+    return subtaskQueue.pollFirst();
   }
 }
