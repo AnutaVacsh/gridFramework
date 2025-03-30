@@ -12,6 +12,8 @@ public class ApiPath {
 
     public static final String CLIENT_BASE_URL = "serviceDiscovery/";
     public static final String NODE_M = "nodeM/";
+    public static final String TASK_M = "taskM/";
     public static final String NODE_REGISTER = CLIENT_BASE_URL + NODE_M + "register";
     public static final String NODE_DETACH = CLIENT_BASE_URL + NODE_M  + "detach";
+    public static final String RETURN = CLIENT_BASE_URL + TASK_M + "return";
 }

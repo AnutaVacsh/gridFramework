@@ -8,12 +8,15 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.concurrent.CompletableFuture;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import ru.vaschenko.ServiceDiscovery.client.ComputingNodeClient;
 import ru.vaschenko.ServiceDiscovery.client.DistributionNodeClient;
+import ru.vaschenko.ServiceDiscovery.dto.AnswerDto;
 import ru.vaschenko.ServiceDiscovery.dto.FullTaskRequest;
 import ru.vaschenko.ServiceDiscovery.dto.SubTaskRequest;
 import ru.vaschenko.ServiceDiscovery.dto.TaskRequest;
@@ -28,6 +31,7 @@ public class TaskManagementService {
 
   private static final long POLL_INTERVAL_MS = 1000;
   private Deque<SubTaskRequest> subtaskQueue = new ArrayDeque<>();
+  private List<Object> listResult = new ArrayList<>();
 
   public List<Object> calculateTask(FullTaskRequest fullTaskRequest) {
     log.info("Начинаем решение задачи {}", fullTaskRequest);
@@ -35,9 +39,9 @@ public class TaskManagementService {
 
     Map<String, Object> subtask;
     SubTaskRequest str;
-    List<Map<String, Object>> listRes = new ArrayList<>();
 
     while(true) {
+      log.info("_______________________");
       if(NodeRegistry.getDistributionNodes() == null){
         log.info("Распределительная нода не найдена!!!");
         break;
@@ -62,20 +66,20 @@ public class TaskManagementService {
       }
 
       workNode.setSubTaskRequest(str);
-      log.info("Новая подзадачка {}", str);
+      log.info("Помечаем ноду как занятую");
 
       ComputingNodeClient client = getComputingNodeClientForHost(workNode.getNodeUrl());
-      Map<String, Object> res = client.calculate(str);
-      log.info("Решение подзадачки {}", res);
-      listRes.add(res);
+      sendSubtaskAsync(client, str);
 
-      workNode.setSubTaskRequest(null);
+      log.info("Задачка отправлена, идём дальше...");
+
     }
-
-    return convertToList(listRes);
+    log.info("Возвращаем итог {}", listResult);
+    return listResult;
   }
 
   private NodeInformation waitForAvailableNode() {
+    log.info("Все ноды {}", NodeRegistry.getAllNodes().stream().toList());
     if (NodeRegistry.getAllNodes().isEmpty()){
       log.info("Вычислительных нод нет(((");
       return null;
@@ -107,24 +111,6 @@ public class TaskManagementService {
     getNodeClientForHost(NodeRegistry.getDistributionNodes()).clearDistributor();
   }
 
-  private List<Object> convertToList(List<Map<String, Object>> nodeResults) {
-    log.debug("Начало конвертации в список. Получены nodeResults: {}", nodeResults);
-    String key = nodeResults.get(0).keySet().iterator().next();
-
-    List<Object> allResults =
-        nodeResults.stream()
-            .map(map -> (List<Object>) map.values().iterator().next())
-            .flatMap(List::stream)
-            .toList();
-
-    log.debug("Конвертированные результаты: {}", allResults);
-
-    Map<String, Object> result = Map.of(key, allResults);
-    log.debug("Возвращаемый результат: {}", result);
-
-    return allResults;
-  }
-
   public ComputingNodeClient getComputingNodeClientForHost(String host) {
     return feignBuilder.target(ComputingNodeClient.class, host);
   }
@@ -139,5 +125,37 @@ public class TaskManagementService {
 
   public SubTaskRequest pollSubtaskQueue(){
     return subtaskQueue.pollFirst();
+  }
+  public void addNewRes(AnswerDto res){
+    log.info("Вернулся новый результат от ноды {}", res.url());
+
+    NodeRegistry.getNode(res.url()).setSubTaskRequest(null);
+    log.info("Освобождаем ноду");
+    addRes(res.res());
+  }
+
+  private void addRes(Map<String, Object> res){
+    listResult = (getNodeClientForHost(NodeRegistry.getDistributionNodes()).getCollectionRes(res));
+    log.info("Положили актуальный результат");
+  }
+
+  @Scheduled(fixedRate = 60 * 1000)
+  private boolean nodesFinishing(){
+      for(NodeInformation inf: NodeRegistry.getAllNodes()){
+        if(inf.getSubTaskRequest() != null) return false;
+      }
+
+      return true;
+  }
+
+  public void sendSubtaskAsync(ComputingNodeClient client, SubTaskRequest str) {
+    new Thread(() -> {
+      try {
+        client.calculate(str);
+        log.info("Отправили задачку");
+      } catch (Exception e) {
+        log.error("Ошибка при отправке подзадачи: {}", e.getMessage());
+      }
+    }).start();
   }
 }

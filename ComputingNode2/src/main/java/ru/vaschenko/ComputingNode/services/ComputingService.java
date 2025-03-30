@@ -3,7 +3,9 @@ package ru.vaschenko.ComputingNode.services;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.vaschenko.ComputingNode.client.ServiceDiscoveryClient;
 import ru.vaschenko.ComputingNode.dto.SubTaskRequest;
+import ru.vaschenko.ComputingNode.dto.AnswerDto;
 import ru.vaschenko.enams.TypeComponent;
 
 import java.nio.file.Path;
@@ -17,10 +19,11 @@ import java.util.Map;
 public class ComputingService {
   private final JarStorageService jarStorageService;
   private final ClassLoaderService jarClassLoaderService;
+  private final ServiceDiscoveryClient serviceDiscoveryClient;
 
   private List<Class<?>> classes = new ArrayList<>();
 
-  public Map<String, Object> computingSubtask(SubTaskRequest subTask){
+  public void computingSubtask(SubTaskRequest subTask){
     Path pathJar = jarStorageService.saveJar(subTask.jar());
     classes = jarClassLoaderService.loadAllClasses(pathJar);
 
@@ -30,7 +33,7 @@ public class ComputingService {
     //    Map<String, Object> ssbt = solve(gsbt);
     //    log.debug("Решённая подзадача {}", ssbt);
 
-    return gsbt;
+      returnAnswer(gsbt);
   }
 
   private Map<String, Object> generate(SubTaskRequest subTask) {
@@ -51,5 +54,9 @@ public class ComputingService {
       } catch (Exception e) {
           throw new RuntimeException("Ошибка при решении задачи", e);
       }
+  }
+
+  private void returnAnswer(Map<String, Object> gsbt){
+      serviceDiscoveryClient.returnAnswer(new AnswerDto(gsbt, "http://localhost:8084"));
   }
 }

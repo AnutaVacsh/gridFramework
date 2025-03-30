@@ -17,12 +17,11 @@ public class ComputingNodeClintFacade implements ComputingNodeClient {
 
   @Override
   @FeignRetryable
-  public Map<String, Object> calculate(SubTaskRequest subTask) {
+  public void calculate(SubTaskRequest subTask) {
     try {
       log.info("Sending request for work node in subtask {}", subTask);
-      Map<String, Object> result = computingNodeClient.calculate(subTask);
-      log.info("Received result for subtask {}", subTask);
-      return result;
+      computingNodeClient.calculate(subTask);
+      log.info("Subtask submit {}", subTask);
     } catch (Exception e) {
       log.error(
               "Error occurred while calculating Latin Square for subtask {}: {}",

@@ -38,6 +38,16 @@ public class DistributionServices {
     }
   }
 
+  public List<Object> collect(Map<String, Object> res) {
+    try {
+      return (List<Object>)
+              jarClassLoaderService.findAndInvokeSinglePublicMethod(
+                      classes, TypeComponent.COLLECTOR, res);
+    } catch (Exception e) {
+      throw new RuntimeException("Ошибка при объединении результата", e);
+    }
+  }
+
   public void clear(){
     classes.clear();
   }

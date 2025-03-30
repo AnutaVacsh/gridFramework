@@ -11,8 +11,11 @@ public class ApiPath {
 
     public static final String TASK_M = BASE_URL + "taskM/";
 
+    public static final String RETURN = "return";
+
     public static final String CLIENT_DISTRIBUTION_URL = "distributionNode/";
     public static final String CALCULATE_SQUARE = CLIENT_DISTRIBUTION_URL + "submit/task";
+    public static final String COLLECT_RES = CLIENT_DISTRIBUTION_URL + "collect";
     public static final String CLEAR = CLIENT_DISTRIBUTION_URL + "clear";
 
     public static final String CLIENT_COMPUTING_URL = "computingNode/";

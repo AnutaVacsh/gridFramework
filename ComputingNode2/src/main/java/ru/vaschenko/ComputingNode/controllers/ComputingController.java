@@ -18,14 +18,12 @@ public class ComputingController implements ComputingApi {
     private final NodeRegisterService nodeRegisterService;
 
     @Override
-    public Map<String, Object> calculateLatinSquare(SubTaskRequest subTask) {
-        return computingService.computingSubtask(subTask);
+    public void calculateLatinSquare(SubTaskRequest subTask) {
+        computingService.computingSubtask(subTask);
     }
 
     @Override
-    public void ping() {
-
-    }
+    public void ping() {}
 
     @Override
     public void nodeRegister(NodeRegisterDto nodeRegisterDto) {

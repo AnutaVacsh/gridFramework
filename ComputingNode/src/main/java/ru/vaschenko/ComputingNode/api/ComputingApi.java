@@ -13,7 +13,7 @@ import java.util.Map;
 @RequestMapping(ApiPath.BASE_URL)
 public interface ComputingApi {
     @PostMapping(ApiPath.CALCULATE_SUBTASK)
-    Map<String, Object> calculateLatinSquare(@RequestBody SubTaskRequest subTask);
+    void calculateLatinSquare(@RequestBody SubTaskRequest subTask);
 
     @GetMapping(ApiPath.PING)
     void ping();

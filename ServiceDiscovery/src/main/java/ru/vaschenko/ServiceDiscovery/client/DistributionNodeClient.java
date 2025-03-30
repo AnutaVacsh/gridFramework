@@ -15,6 +15,9 @@ public interface DistributionNodeClient {
   @PostMapping(value = ApiPath.CALCULATE_SQUARE)
   Map<String, Object> submitTask(@RequestBody TaskRequest taskRequest);
 
+  @PostMapping(ApiPath.COLLECT_RES)
+  List<Object> getCollectionRes(@RequestBody Map<String, Object> res);
+
   @PostMapping(ApiPath.CLEAR)
   void clearDistributor();
 }

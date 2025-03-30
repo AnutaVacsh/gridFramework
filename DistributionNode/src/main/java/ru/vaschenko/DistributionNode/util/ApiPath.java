@@ -6,6 +6,7 @@ import lombok.experimental.UtilityClass;
 public class ApiPath {
     public static final String BASE_URL = "distributionNode";
     public static final String CALCULATE_SQUARE = "submit/task";
+    public static final String COLLECT_RES = "collect";
     public static final String CLEAR = "clear";
 
     public static final String BASE_URL_CLIENT = "computingNode/";

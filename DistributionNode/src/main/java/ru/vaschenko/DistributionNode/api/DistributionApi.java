@@ -16,6 +16,9 @@ public interface DistributionApi {
     @PostMapping(ApiPath.CALCULATE_SQUARE)
     Map<String, Object> getSubTask(@RequestBody TaskRequest task);
 
+    @PostMapping(ApiPath.COLLECT_RES)
+    List<Object> getCollectionRes(@RequestBody Map<String, Object> res);
+
     @PostMapping(ApiPath.CLEAR)
     void clearDistributor();
 

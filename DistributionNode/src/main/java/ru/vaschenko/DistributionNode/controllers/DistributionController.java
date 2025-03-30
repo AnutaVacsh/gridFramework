@@ -23,6 +23,11 @@ public class DistributionController implements DistributionApi {
     }
 
     @Override
+    public List<Object> getCollectionRes(Map<String, Object> res) {
+        return distributionServices.collect(res);
+    }
+
+    @Override
     public void clearDistributor() {
         distributionServices.clear();
     }

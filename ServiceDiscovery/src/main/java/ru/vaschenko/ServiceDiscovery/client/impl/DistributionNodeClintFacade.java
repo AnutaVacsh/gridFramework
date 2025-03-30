@@ -1,5 +1,6 @@
 package ru.vaschenko.ServiceDiscovery.client.impl;
 
+import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,11 @@ public class DistributionNodeClintFacade implements DistributionNodeClient {
       log.error("Error occurred while calculating Latin Square for task: {}", e.getMessage());
       throw new RuntimeException("Error calculating Latin Square for task", e);
     }
+  }
+
+  @Override
+  public List<Object> getCollectionRes(Map<String, Object> res) {
+    return List.of();
   }
 
   @Override
