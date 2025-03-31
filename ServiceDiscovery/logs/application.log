@@ -1,661 +1,309 @@
-2025-03-30T17:04:45.393+04:00  INFO 16152 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Starting ServiceDiscoveryApplication using Java 22.0.2 with PID 16152 (C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery\target\classes started by Ann in C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery)
-2025-03-30T17:04:45.424+04:00 DEBUG 16152 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Running with Spring Boot v3.3.5, Spring v6.1.14
-2025-03-30T17:04:45.426+04:00  INFO 16152 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : No active profile set, falling back to 1 default profile: "default"
-2025-03-30T17:04:47.214+04:00  INFO 16152 --- [ServiceDiscovery] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc676f0b-2e84-30fe-8ba4-99b076e6dea2
-2025-03-30T17:04:47.729+04:00  INFO 16152 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
-2025-03-30T17:04:47.745+04:00  INFO 16152 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-30T17:04:47.745+04:00  INFO 16152 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-03-30T17:04:47.839+04:00  INFO 16152 --- [ServiceDiscovery] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-30T17:04:47.839+04:00  INFO 16152 --- [ServiceDiscovery] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2252 ms
-2025-03-30T17:04:48.846+04:00  INFO 16152 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
-2025-03-30T17:04:48.861+04:00  INFO 16152 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Started ServiceDiscoveryApplication in 4.663 seconds (process running for 5.563)
-2025-03-30T17:09:41.198+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-30T17:09:41.224+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-30T17:09:41.267+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 42 ms
-2025-03-30T17:09:42.847+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 916 ms
-2025-03-30T17:10:03.246+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8082]
-2025-03-30T17:10:11.854+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=DISTRIBUTION, nodeUrl=http://localhost:8081]
-2025-03-30T17:10:25.764+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@59c4324a, jarToComp=[B@67a2c828]
-2025-03-30T17:10:25.815+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:10:26.017+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:10:26.017+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)]
-2025-03-30T17:10:26.017+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:10:26.017+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:10:26.017+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:10:26.017+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:10:26.057+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:10:26.057+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@67a2c828], lastResponseTime=null)]
-2025-03-30T17:10:26.059+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:10:26.516+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:10:26.517+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:10:26.523+04:00  INFO 16152 --- [ServiceDiscovery] [Thread-3] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:10:27.061+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:10:27.062+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:10:27.062+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:10:27.062+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:10:27.124+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:10:27.127+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@67a2c828], lastResponseTime=null)]
-2025-03-30T17:10:27.129+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:10:27.547+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:10:27.547+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:10:27.547+04:00  INFO 16152 --- [ServiceDiscovery] [Thread-4] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:10:28.145+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:10:28.146+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:10:28.146+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:10:28.146+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:10:28.178+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:10:28.180+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@67a2c828], lastResponseTime=null)]
-2025-03-30T17:10:28.181+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:10:28.519+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:10:28.520+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:10:28.526+04:00  INFO 16152 --- [ServiceDiscovery] [Thread-5] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:10:29.192+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:10:29.193+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:10:29.195+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:10:29.197+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:10:29.233+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:10:29.234+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@67a2c828], lastResponseTime=null)]
-2025-03-30T17:10:29.235+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:10:29.498+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:10:29.498+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:10:29.498+04:00  INFO 16152 --- [ServiceDiscovery] [Thread-6] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:10:30.242+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:10:30.242+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:10:30.242+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:10:30.249+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:10:30.303+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Следующая подзадача null
-2025-03-30T17:10:30.304+04:00 DEBUG 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Начало конвертации в список. Получены nodeResults: [{re=[]}, {re=[{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}]}, {re=[]}, {re=[{matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]}]
-2025-03-30T17:10:30.307+04:00 DEBUG 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Конвертированные результаты: [{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}, {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]
-2025-03-30T17:10:30.308+04:00 DEBUG 16152 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Возвращаемый результат: {re=[{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}, {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]}
-2025-03-30T17:10:30.561+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:10:30.561+04:00  INFO 16152 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:10:30.561+04:00  INFO 16152 --- [ServiceDiscovery] [Thread-7] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:10:48.868+04:00  INFO 16152 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:10:48.868+04:00  INFO 16152 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:11:48.874+04:00  INFO 16152 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:11:48.874+04:00  INFO 16152 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:12:48.872+04:00  INFO 16152 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:12:48.872+04:00  INFO 16152 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:45:57.448+04:00  INFO 14804 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Starting ServiceDiscoveryApplication using Java 22.0.2 with PID 14804 (C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery\target\classes started by Ann in C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery)
-2025-03-30T17:45:57.455+04:00 DEBUG 14804 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Running with Spring Boot v3.3.5, Spring v6.1.14
-2025-03-30T17:45:57.458+04:00  INFO 14804 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : No active profile set, falling back to 1 default profile: "default"
-2025-03-30T17:46:00.430+04:00  INFO 14804 --- [ServiceDiscovery] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc676f0b-2e84-30fe-8ba4-99b076e6dea2
-2025-03-30T17:46:01.211+04:00  INFO 14804 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
-2025-03-30T17:46:01.238+04:00  INFO 14804 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-30T17:46:01.238+04:00  INFO 14804 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-03-30T17:46:01.357+04:00  INFO 14804 --- [ServiceDiscovery] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-30T17:46:01.363+04:00  INFO 14804 --- [ServiceDiscovery] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3635 ms
-2025-03-30T17:46:02.632+04:00  INFO 14804 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
-2025-03-30T17:46:02.660+04:00  INFO 14804 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Started ServiceDiscoveryApplication in 6.814 seconds (process running for 8.214)
-2025-03-30T17:47:28.114+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-30T17:47:28.117+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-30T17:47:28.119+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-03-30T17:47:28.412+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8082]
-2025-03-30T17:47:30.398+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=DISTRIBUTION, nodeUrl=http://localhost:8081]
-2025-03-30T17:47:35.041+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@6bb9f077, jarToComp=[B@15d945d3]
-2025-03-30T17:47:35.076+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:47:35.360+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:47:35.360+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)]
-2025-03-30T17:47:35.361+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:47:35.362+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:47:35.364+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:47:35.365+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:47:35.393+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:47:35.394+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@15d945d3], lastResponseTime=null)]
-2025-03-30T17:47:35.395+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:47:35.998+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:47:35.999+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:47:36.227+04:00 ERROR 14804 --- [ServiceDiscovery] [http-nio-8083-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:36.164+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]] with root cause
-
-feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:36.164+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]
-	at feign.FeignException.clientErrorStatus(FeignException.java:228) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:203) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
-	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
-	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
-	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
-	at jdk.proxy2/jdk.proxy2.$Proxy84.getCollectionRes(Unknown Source) ~[na:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addRes(TaskManagementService.java:159) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addNewRes(TaskManagementService.java:155) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.controllers.TaskManagementController.returnAnswer(TaskManagementController.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
-
-2025-03-30T17:47:36.369+04:00 ERROR 14804 --- [ServiceDiscovery] [Thread-3] r.v.S.services.TaskManagementService     : Ошибка при отправке подзадачи: [500] during [POST] to [http://localhost:8082/computingNode/submit/subtask] [ComputingNodeClient#calculate(SubTaskRequest)]: [{"timestamp":"2025-03-30T13:47:36.353+00:00","status":500,"error":"Internal Server Error","path":"/computingNode/submit/subtask"}]
-2025-03-30T17:47:36.402+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:47:36.403+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:47:36.403+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:47:36.403+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:47:36.435+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:47:36.435+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@15d945d3], lastResponseTime=null)]
-2025-03-30T17:47:36.435+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:47:36.641+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:47:36.641+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:47:36.660+04:00 ERROR 14804 --- [ServiceDiscovery] [http-nio-8083-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:36.660+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]] with root cause
-
-feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:36.660+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]
-	at feign.FeignException.clientErrorStatus(FeignException.java:228) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:203) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
-	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
-	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
-	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
-	at jdk.proxy2/jdk.proxy2.$Proxy84.getCollectionRes(Unknown Source) ~[na:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addRes(TaskManagementService.java:159) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addNewRes(TaskManagementService.java:155) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.controllers.TaskManagementController.returnAnswer(TaskManagementController.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
-
-2025-03-30T17:47:36.677+04:00 ERROR 14804 --- [ServiceDiscovery] [Thread-4] r.v.S.services.TaskManagementService     : Ошибка при отправке подзадачи: [500] during [POST] to [http://localhost:8082/computingNode/submit/subtask] [ComputingNodeClient#calculate(SubTaskRequest)]: [{"timestamp":"2025-03-30T13:47:36.677+00:00","status":500,"error":"Internal Server Error","path":"/computingNode/submit/subtask"}]
-2025-03-30T17:47:37.450+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:47:37.450+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:47:37.450+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:47:37.450+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:47:37.481+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:47:37.481+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@15d945d3], lastResponseTime=null)]
-2025-03-30T17:47:37.481+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:47:37.612+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:47:37.612+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:47:37.628+04:00 ERROR 14804 --- [ServiceDiscovery] [http-nio-8083-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:37.628+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]] with root cause
-
-feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:37.628+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]
-	at feign.FeignException.clientErrorStatus(FeignException.java:228) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:203) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
-	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
-	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
-	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
-	at jdk.proxy2/jdk.proxy2.$Proxy84.getCollectionRes(Unknown Source) ~[na:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addRes(TaskManagementService.java:159) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addNewRes(TaskManagementService.java:155) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.controllers.TaskManagementController.returnAnswer(TaskManagementController.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
-
-2025-03-30T17:47:37.644+04:00 ERROR 14804 --- [ServiceDiscovery] [Thread-5] r.v.S.services.TaskManagementService     : Ошибка при отправке подзадачи: [500] during [POST] to [http://localhost:8082/computingNode/submit/subtask] [ComputingNodeClient#calculate(SubTaskRequest)]: [{"timestamp":"2025-03-30T13:47:37.628+00:00","status":500,"error":"Internal Server Error","path":"/computingNode/submit/subtask"}]
-2025-03-30T17:47:38.489+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:47:38.490+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:47:38.490+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:47:38.490+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:47:38.529+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:47:38.529+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@15d945d3], lastResponseTime=null)]
-2025-03-30T17:47:38.529+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:47:38.641+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:47:38.641+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:47:38.657+04:00 ERROR 14804 --- [ServiceDiscovery] [http-nio-8083-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:38.657+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]] with root cause
-
-feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:38.657+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]
-	at feign.FeignException.clientErrorStatus(FeignException.java:228) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:203) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
-	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
-	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
-	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
-	at jdk.proxy2/jdk.proxy2.$Proxy84.getCollectionRes(Unknown Source) ~[na:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addRes(TaskManagementService.java:159) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addNewRes(TaskManagementService.java:155) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.controllers.TaskManagementController.returnAnswer(TaskManagementController.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
-
-2025-03-30T17:47:38.673+04:00 ERROR 14804 --- [ServiceDiscovery] [Thread-6] r.v.S.services.TaskManagementService     : Ошибка при отправке подзадачи: [500] during [POST] to [http://localhost:8082/computingNode/submit/subtask] [ComputingNodeClient#calculate(SubTaskRequest)]: [{"timestamp":"2025-03-30T13:47:38.673+00:00","status":500,"error":"Internal Server Error","path":"/computingNode/submit/subtask"}]
-2025-03-30T17:47:39.542+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:47:39.542+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:47:39.542+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:47:39.542+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:47:39.571+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача null
-2025-03-30T17:47:39.677+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:47:39.677+04:00  INFO 14804 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:47:39.693+04:00 ERROR 14804 --- [ServiceDiscovery] [http-nio-8083-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:39.693+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]] with root cause
-
-feign.FeignException$NotFound: [404] during [POST] to [http://localhost:8081/distributionNode/collect] [DistributionNodeClient#getCollectionRes(Map)]: [{"timestamp":"2025-03-30T13:47:39.693+00:00","status":404,"error":"Not Found","path":"/distributionNode/collect"}]
-	at feign.FeignException.clientErrorStatus(FeignException.java:228) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:203) ~[feign-core-13.2.1.jar:na]
-	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
-	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
-	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
-	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
-	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
-	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
-	at jdk.proxy2/jdk.proxy2.$Proxy84.getCollectionRes(Unknown Source) ~[na:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addRes(TaskManagementService.java:159) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.services.TaskManagementService.addNewRes(TaskManagementService.java:155) ~[classes/:na]
-	at ru.vaschenko.ServiceDiscovery.controllers.TaskManagementController.returnAnswer(TaskManagementController.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
-
-2025-03-30T17:47:39.709+04:00 ERROR 14804 --- [ServiceDiscovery] [Thread-7] r.v.S.services.TaskManagementService     : Ошибка при отправке подзадачи: [500] during [POST] to [http://localhost:8082/computingNode/submit/subtask] [ComputingNodeClient#calculate(SubTaskRequest)]: [{"timestamp":"2025-03-30T13:47:39.709+00:00","status":500,"error":"Internal Server Error","path":"/computingNode/submit/subtask"}]
-2025-03-30T17:48:02.672+04:00  INFO 14804 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:48:02.672+04:00  INFO 14804 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:51:36.784+04:00  INFO 14560 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Starting ServiceDiscoveryApplication using Java 22.0.2 with PID 14560 (C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery\target\classes started by Ann in C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery)
-2025-03-30T17:51:36.788+04:00 DEBUG 14560 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Running with Spring Boot v3.3.5, Spring v6.1.14
-2025-03-30T17:51:36.791+04:00  INFO 14560 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : No active profile set, falling back to 1 default profile: "default"
-2025-03-30T17:51:39.829+04:00  INFO 14560 --- [ServiceDiscovery] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc676f0b-2e84-30fe-8ba4-99b076e6dea2
-2025-03-30T17:51:40.394+04:00  INFO 14560 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
-2025-03-30T17:51:40.410+04:00  INFO 14560 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-30T17:51:40.410+04:00  INFO 14560 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-03-30T17:51:40.489+04:00  INFO 14560 --- [ServiceDiscovery] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-30T17:51:40.489+04:00  INFO 14560 --- [ServiceDiscovery] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3454 ms
-2025-03-30T17:51:41.600+04:00  INFO 14560 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
-2025-03-30T17:51:41.633+04:00  INFO 14560 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Started ServiceDiscoveryApplication in 6.549 seconds (process running for 8.482)
-2025-03-30T17:52:54.150+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-30T17:52:54.150+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-30T17:52:54.150+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-03-30T17:52:54.300+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=DISTRIBUTION, nodeUrl=http://localhost:8081]
-2025-03-30T17:53:01.267+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8082]
-2025-03-30T17:53:04.467+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@23576058, jarToComp=[B@25df2ff9]
-2025-03-30T17:53:04.484+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:53:04.616+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:53:04.616+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)]
-2025-03-30T17:53:04.616+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:53:04.616+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:53:04.616+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:53:04.616+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:53:04.650+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:53:04.650+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@25df2ff9], lastResponseTime=null)]
-2025-03-30T17:53:04.667+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:53:04.900+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:53:04.900+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:53:04.916+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:53:04.916+04:00  INFO 14560 --- [ServiceDiscovery] [Thread-3] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:53:05.671+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:53:05.671+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:53:05.671+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:53:05.671+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:53:05.687+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:53:05.700+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@25df2ff9], lastResponseTime=null)]
-2025-03-30T17:53:05.700+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:53:05.884+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:53:05.884+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:53:05.900+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:53:05.900+04:00  INFO 14560 --- [ServiceDiscovery] [Thread-4] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:53:06.714+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:53:06.714+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:53:06.714+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:53:06.714+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:53:06.739+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:53:06.739+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@25df2ff9], lastResponseTime=null)]
-2025-03-30T17:53:06.739+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:53:06.900+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:53:06.900+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:53:06.917+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:53:06.917+04:00  INFO 14560 --- [ServiceDiscovery] [Thread-5] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:53:07.747+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:53:07.747+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:53:07.750+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:53:07.750+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:53:07.766+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:53:07.766+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@25df2ff9], lastResponseTime=null)]
-2025-03-30T17:53:07.766+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:53:07.900+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:53:07.900+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:53:07.917+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:53:07.917+04:00  INFO 14560 --- [ServiceDiscovery] [Thread-6] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:53:08.778+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:53:08.778+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:53:08.778+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:53:08.778+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:53:08.810+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Следующая подзадача null
-2025-03-30T17:53:08.988+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:53:08.988+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:53:09.004+04:00  INFO 14560 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:53:09.004+04:00  INFO 14560 --- [ServiceDiscovery] [Thread-7] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:53:41.651+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:53:41.651+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:54:41.651+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:54:41.651+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:55:41.648+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:55:41.652+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:56:41.643+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:56:41.643+04:00  INFO 14560 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:57:14.115+04:00  INFO 14232 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Starting ServiceDiscoveryApplication using Java 22.0.2 with PID 14232 (C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery\target\classes started by Ann in C:\Users\Ann\Downloads\gridFramework-main\ServiceDiscovery)
-2025-03-30T17:57:14.127+04:00 DEBUG 14232 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Running with Spring Boot v3.3.5, Spring v6.1.14
-2025-03-30T17:57:14.127+04:00  INFO 14232 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : No active profile set, falling back to 1 default profile: "default"
-2025-03-30T17:57:16.369+04:00  INFO 14232 --- [ServiceDiscovery] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc676f0b-2e84-30fe-8ba4-99b076e6dea2
-2025-03-30T17:57:17.450+04:00  INFO 14232 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
-2025-03-30T17:57:17.471+04:00  INFO 14232 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-30T17:57:17.471+04:00  INFO 14232 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-03-30T17:57:17.595+04:00  INFO 14232 --- [ServiceDiscovery] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-30T17:57:17.595+04:00  INFO 14232 --- [ServiceDiscovery] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3311 ms
-2025-03-30T17:57:19.436+04:00  INFO 14232 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
-2025-03-30T17:57:19.485+04:00  INFO 14232 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Started ServiceDiscoveryApplication in 7.408 seconds (process running for 9.201)
-2025-03-30T17:57:42.143+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-30T17:57:42.148+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-30T17:57:42.155+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2025-03-30T17:57:43.361+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 729 ms
-2025-03-30T17:57:55.092+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8084]
-2025-03-30T17:58:14.227+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8082]
-2025-03-30T17:58:16.526+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=DISTRIBUTION, nodeUrl=http://localhost:8081]
-2025-03-30T17:58:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
-2025-03-30T17:58:19.520+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
-2025-03-30T17:58:19.520+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:58:19.520+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T17:58:47.091+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@5055dc3d, jarToComp=[B@76bb9ead]
-2025-03-30T17:58:47.091+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:58:47.140+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:58:47.156+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)]
-2025-03-30T17:58:47.156+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:58:47.156+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:58:47.156+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:58:47.156+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:58:47.172+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:58:47.172+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@76bb9ead], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)]
-2025-03-30T17:58:47.172+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:58:47.172+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:58:47.188+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:58:47.188+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:58:47.227+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:58:47.228+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@76bb9ead], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@76bb9ead], lastResponseTime=null)]
-2025-03-30T17:58:47.228+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:58:47.496+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:58:47.499+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:58:47.529+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:58:47.529+04:00  INFO 14232 --- [ServiceDiscovery] [Thread-4] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:58:47.557+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
-2025-03-30T17:58:47.557+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:58:47.574+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:58:47.574+04:00  INFO 14232 --- [ServiceDiscovery] [Thread-3] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:58:48.238+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:58:48.238+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:58:48.238+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:58:48.238+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:58:48.262+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:58:48.262+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@76bb9ead], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)]
-2025-03-30T17:58:48.262+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:58:48.262+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:58:48.262+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:58:48.262+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:58:48.282+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
-2025-03-30T17:58:48.282+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@76bb9ead], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@76bb9ead], lastResponseTime=null)]
-2025-03-30T17:58:48.282+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
-2025-03-30T17:58:48.492+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
-2025-03-30T17:58:48.492+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:58:48.509+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
-2025-03-30T17:58:48.509+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:58:48.509+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:58:48.509+04:00  INFO 14232 --- [ServiceDiscovery] [Thread-5] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:58:48.524+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:58:48.524+04:00  INFO 14232 --- [ServiceDiscovery] [Thread-6] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:58:49.298+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
-2025-03-30T17:58:49.298+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
-2025-03-30T17:58:49.298+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
-2025-03-30T17:58:49.298+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : _______________________
-2025-03-30T17:58:49.320+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Следующая подзадача null
-2025-03-30T17:58:49.320+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Возвращаем итог [{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}, {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]
-2025-03-30T17:58:49.491+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
-2025-03-30T17:58:49.491+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Освобождаем ноду
-2025-03-30T17:58:49.508+04:00  INFO 14232 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Положили актуальный результат
-2025-03-30T17:58:49.508+04:00  INFO 14232 --- [ServiceDiscovery] [Thread-7] r.v.S.services.TaskManagementService     : Отправили задачку
-2025-03-30T17:59:19.491+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
-2025-03-30T17:59:19.491+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
-2025-03-30T17:59:19.491+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T17:59:19.491+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T18:00:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
-2025-03-30T18:00:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
-2025-03-30T18:00:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T18:00:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T18:01:19.481+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
-2025-03-30T18:01:19.481+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
-2025-03-30T18:01:19.481+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T18:01:19.481+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T18:02:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
-2025-03-30T18:02:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
-2025-03-30T18:02:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T18:02:19.504+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T18:03:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
-2025-03-30T18:03:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
-2025-03-30T18:03:19.489+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T18:03:19.504+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
-2025-03-30T18:04:19.482+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
-2025-03-30T18:04:19.482+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
-2025-03-30T18:04:19.482+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
-2025-03-30T18:04:19.482+04:00  INFO 14232 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T21:48:53.404+04:00  INFO 10432 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Starting ServiceDiscoveryApplication using Java 22.0.2 with PID 10432 (C:\Users\Ann\Desktop\study\огв\grid framework\ServiceDiscovery\target\classes started by Ann in C:\Users\Ann\Desktop\study\огв\grid framework\ServiceDiscovery)
+2025-03-31T21:48:53.431+04:00 DEBUG 10432 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-03-31T21:48:53.435+04:00  INFO 10432 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-31T21:49:11.834+04:00  INFO 10432 --- [ServiceDiscovery] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc676f0b-2e84-30fe-8ba4-99b076e6dea2
+2025-03-31T21:49:24.410+04:00  INFO 10432 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-03-31T21:49:24.494+04:00  INFO 10432 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-31T21:49:24.495+04:00  INFO 10432 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-03-31T21:49:26.304+04:00  INFO 10432 --- [ServiceDiscovery] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-31T21:49:26.315+04:00  INFO 10432 --- [ServiceDiscovery] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 32742 ms
+2025-03-31T21:49:42.516+04:00  INFO 10432 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-03-31T21:49:42.556+04:00  INFO 10432 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Started ServiceDiscoveryApplication in 50.151 seconds (process running for 50.981)
+2025-03-31T21:54:37.574+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-31T21:54:37.603+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-31T21:54:37.664+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 60 ms
+2025-03-31T21:54:38.242+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=DISTRIBUTION, nodeUrl=http://localhost:8081]
+2025-03-31T21:54:54.108+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8082]
+2025-03-31T21:55:02.123+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8084]
+2025-03-31T21:55:11.044+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@1a344217, jarToComp=[B@eac0263]
+2025-03-31T21:55:11.121+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:55:11.405+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:55:11.405+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T21:55:11.405+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:55:11.405+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:55:11.423+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:55:11.424+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:55:11.458+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:55:11.458+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@eac0263], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T21:55:11.458+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:55:11.458+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:55:11.458+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:55:11.458+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:55:11.526+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:55:11.531+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@eac0263], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@eac0263], lastResponseTime=null)]
+2025-03-31T21:55:11.533+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T21:55:12.359+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T21:55:12.360+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:55:12.382+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:55:12.390+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-3] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:55:12.488+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T21:55:12.488+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:55:12.538+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:55:12.542+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:55:12.542+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:55:12.544+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:55:12.546+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:55:12.547+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-4] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:55:12.575+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:55:12.581+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@eac0263], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T21:55:12.582+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:55:12.583+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:55:12.583+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:55:12.583+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:55:12.644+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:55:12.644+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@eac0263], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@eac0263], lastResponseTime=null)]
+2025-03-31T21:55:12.644+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T21:55:13.057+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T21:55:13.057+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:55:13.073+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:55:13.073+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-5] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:55:13.147+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T21:55:13.147+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:55:13.173+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:55:13.173+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-6] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:55:13.658+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:55:13.658+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:55:13.658+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:55:13.658+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:55:13.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Следующая подзадача null
+2025-03-31T21:55:13.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Возвращаем итог [{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}, {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]
+2025-03-31T21:55:14.200+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T21:55:14.200+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:55:14.235+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:55:14.235+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-7] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:55:42.565+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
+2025-03-31T21:55:42.565+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T21:55:42.565+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
+2025-03-31T21:55:42.581+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
+2025-03-31T21:56:42.562+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
+2025-03-31T21:56:42.574+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T21:56:42.574+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
+2025-03-31T21:56:42.574+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
+2025-03-31T21:57:42.561+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
+2025-03-31T21:57:42.573+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T21:57:42.573+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
+2025-03-31T21:57:42.573+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
+2025-03-31T21:58:20.475+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@1f989c8a, jarToComp=[B@5caff1be]
+2025-03-31T21:58:20.490+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:58:20.553+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:58:20.554+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T21:58:20.554+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:58:20.554+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:58:20.557+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:58:20.558+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:58:20.584+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:58:20.584+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@5caff1be], lastResponseTime=null)]
+2025-03-31T21:58:20.585+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:58:20.585+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:58:20.613+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:58:20.614+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:58:20.654+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:58:20.655+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@5caff1be], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@5caff1be], lastResponseTime=null)]
+2025-03-31T21:58:20.656+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T21:58:20.864+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T21:58:20.864+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:58:20.898+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-10] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:58:20.913+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-8] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:58:20.952+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T21:58:20.952+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:58:20.968+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:58:20.968+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-9] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:58:21.665+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:58:21.665+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:58:21.666+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:58:21.666+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:58:21.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:58:21.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@5caff1be], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T21:58:21.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:58:21.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:58:21.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:58:21.690+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:58:21.726+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T21:58:21.726+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@5caff1be], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@5caff1be], lastResponseTime=null)]
+2025-03-31T21:58:21.726+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T21:58:22.039+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T21:58:22.039+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:58:22.063+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:58:22.072+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-10] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:58:22.104+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T21:58:22.104+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:58:22.120+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:58:22.120+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-11] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:58:22.731+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T21:58:22.731+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T21:58:22.731+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T21:58:22.731+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T21:58:22.759+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Следующая подзадача null
+2025-03-31T21:58:22.759+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Возвращаем итог [{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}, {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]
+2025-03-31T21:58:23.066+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T21:58:23.071+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T21:58:23.104+04:00  INFO 10432 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T21:58:23.111+04:00  INFO 10432 --- [ServiceDiscovery] [Thread-12] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T21:58:42.558+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
+2025-03-31T21:58:42.558+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T21:58:42.558+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
+2025-03-31T21:58:42.573+04:00  INFO 10432 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
+2025-03-31T22:20:21.659+04:00  INFO 14920 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Starting ServiceDiscoveryApplication using Java 22.0.2 with PID 14920 (C:\Users\Ann\Desktop\study\огв\grid framework\ServiceDiscovery\target\classes started by Ann in C:\Users\Ann\Desktop\study\огв\grid framework\ServiceDiscovery)
+2025-03-31T22:20:21.677+04:00 DEBUG 14920 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-03-31T22:20:21.680+04:00  INFO 14920 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-31T22:20:23.998+04:00  INFO 14920 --- [ServiceDiscovery] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc676f0b-2e84-30fe-8ba4-99b076e6dea2
+2025-03-31T22:20:24.626+04:00  INFO 14920 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-03-31T22:20:24.642+04:00  INFO 14920 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-31T22:20:24.642+04:00  INFO 14920 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-03-31T22:20:24.768+04:00  INFO 14920 --- [ServiceDiscovery] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-31T22:20:24.768+04:00  INFO 14920 --- [ServiceDiscovery] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2959 ms
+2025-03-31T22:20:26.362+04:00  INFO 14920 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-03-31T22:20:26.419+04:00  INFO 14920 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Started ServiceDiscoveryApplication in 5.959 seconds (process running for 6.768)
+2025-03-31T22:21:01.847+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-31T22:21:01.847+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-31T22:21:01.847+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-31T22:21:02.163+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=DISTRIBUTION, nodeUrl=http://localhost:8081]
+2025-03-31T22:21:07.799+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8082]
+2025-03-31T22:21:14.220+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8084]
+2025-03-31T22:21:21.190+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@181b51d1, jarToComp=[B@304adcd9]
+2025-03-31T22:21:21.250+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:21:21.547+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:21:21.551+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T22:21:21.554+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:21:21.555+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:21:21.560+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:21:21.560+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:21:21.612+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:21:21.616+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@304adcd9], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T22:21:21.619+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:21:21.619+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:21:21.619+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:21:21.619+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:21:21.875+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:21:21.883+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@304adcd9], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@304adcd9], lastResponseTime=null)]
+2025-03-31T22:21:21.884+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:21:22.926+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:21:23.953+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:21:24.987+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:21:26.226+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:21:26.866+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
+2025-03-31T22:21:27.056+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T22:21:27.056+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
+2025-03-31T22:21:27.111+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
+2025-03-31T22:21:27.448+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:21:27.505+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T22:21:27.505+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:21:27.554+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T22:21:27.570+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:21:28.231+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:21:28.315+04:00  INFO 14920 --- [ServiceDiscovery] [Thread-3] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:21:28.463+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:21:28.600+04:00  INFO 14920 --- [ServiceDiscovery] [Thread-4] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:21:28.624+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:21:28.659+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:21:28.937+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:21:29.175+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:21:29.789+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:21:29.789+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@304adcd9], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T22:21:29.804+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:21:29.811+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:21:29.823+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:21:29.823+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:21:32.519+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:21:32.519+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@304adcd9], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@304adcd9], lastResponseTime=null)]
+2025-03-31T22:21:32.536+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:21:33.294+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T22:21:33.295+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:21:33.323+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:21:33.335+04:00  INFO 14920 --- [ServiceDiscovery] [Thread-5] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:21:33.342+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T22:21:33.342+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:21:33.364+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:21:33.377+04:00  INFO 14920 --- [ServiceDiscovery] [Thread-6] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:21:33.546+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:21:33.553+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:21:33.573+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:21:33.578+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:21:33.765+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача null
+2025-03-31T22:21:33.765+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Возвращаем итог [{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}, {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]
+2025-03-31T22:21:37.224+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T22:21:37.224+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:21:37.340+04:00  INFO 14920 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:21:37.375+04:00  INFO 14920 --- [ServiceDiscovery] [Thread-7] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:22:26.427+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
+2025-03-31T22:22:26.428+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T22:22:26.428+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
+2025-03-31T22:22:26.444+04:00  INFO 14920 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила
+2025-03-31T22:23:28.819+04:00  INFO 13816 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Starting ServiceDiscoveryApplication using Java 22.0.2 with PID 13816 (C:\Users\Ann\Desktop\study\огв\grid framework\ServiceDiscovery\target\classes started by Ann in C:\Users\Ann\Desktop\study\огв\grid framework\ServiceDiscovery)
+2025-03-31T22:23:28.819+04:00 DEBUG 13816 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-03-31T22:23:28.819+04:00  INFO 13816 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-31T22:23:40.119+04:00  INFO 13816 --- [ServiceDiscovery] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc676f0b-2e84-30fe-8ba4-99b076e6dea2
+2025-03-31T22:23:40.623+04:00  INFO 13816 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-03-31T22:23:40.694+04:00  INFO 13816 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-31T22:23:40.694+04:00  INFO 13816 --- [ServiceDiscovery] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-03-31T22:23:41.826+04:00  INFO 13816 --- [ServiceDiscovery] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-31T22:23:41.826+04:00  INFO 13816 --- [ServiceDiscovery] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12189 ms
+2025-03-31T22:23:51.706+04:00  INFO 13816 --- [ServiceDiscovery] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-03-31T22:23:51.892+04:00  INFO 13816 --- [ServiceDiscovery] [main] r.v.S.ServiceDiscoveryApplication        : Started ServiceDiscoveryApplication in 28.89 seconds (process running for 29.788)
+2025-03-31T22:24:01.235+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-31T22:24:01.238+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-31T22:24:01.242+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-03-31T22:24:01.561+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-1] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8082]
+2025-03-31T22:24:04.811+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-2] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=DISTRIBUTION, nodeUrl=http://localhost:8081]
+2025-03-31T22:24:07.170+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-3] r.v.S.c.NodeManagementController         : Регистрация ноды NodeRegisterDto[type=COMPUTING, nodeUrl=http://localhost:8084]
+2025-03-31T22:24:09.624+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Начинаем решение задачи FullTaskRequest[args={task={alphabet=[A, B, C, D], matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]]}}, jarToDist=[B@a47589d, jarToComp=[B@419115b1]
+2025-03-31T22:24:09.675+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:24:09.834+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:24:09.834+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T22:24:09.848+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:24:09.848+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:24:09.848+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:24:09.848+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:24:09.886+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:24:09.886+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@419115b1], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T22:24:09.886+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:24:09.886+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:24:09.895+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:24:09.895+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:24:09.938+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:24:09.938+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=0, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@419115b1], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=1, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@419115b1], lastResponseTime=null)]
+2025-03-31T22:24:09.938+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:24:10.292+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T22:24:10.292+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:24:10.309+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-5] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:24:10.325+04:00  INFO 13816 --- [ServiceDiscovery] [Thread-3] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:24:10.341+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T22:24:10.341+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:24:10.359+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-6] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:24:10.359+04:00  INFO 13816 --- [ServiceDiscovery] [Thread-4] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:24:10.941+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:24:10.942+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:24:10.942+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:24:10.942+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:24:10.976+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:24:10.976+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@419115b1], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)]
+2025-03-31T22:24:10.976+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:24:10.976+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:24:10.976+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:24:10.976+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:24:11.027+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача {subTask={treeLevel=1, number=4, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}
+2025-03-31T22:24:11.028+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Все ноды [NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=2, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@419115b1], lastResponseTime=null), NodeInformation(nodeUrl=http://localhost:8084, subTaskRequest=SubTaskRequest[args={subTask={treeLevel=1, number=3, matrix=[[A, null, null, null], [null, A, null, C], [C, null, A, null], [null, C, null, A]], alphabet=[A, B, C, D]}}, jar=[B@419115b1], lastResponseTime=null)]
+2025-03-31T22:24:11.029+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждём освобождение ноды
+2025-03-31T22:24:11.295+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T22:24:11.295+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:24:11.311+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-7] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:24:11.326+04:00  INFO 13816 --- [ServiceDiscovery] [Thread-5] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:24:11.343+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8084
+2025-03-31T22:24:11.343+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:24:11.359+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-8] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:24:11.375+04:00  INFO 13816 --- [ServiceDiscovery] [Thread-6] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:24:12.038+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Свободная нода найдена - NodeInformation(nodeUrl=http://localhost:8082, subTaskRequest=null, lastResponseTime=null)
+2025-03-31T22:24:12.038+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Помечаем ноду как занятую
+2025-03-31T22:24:12.042+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Задачка отправлена, идём дальше...
+2025-03-31T22:24:12.042+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : _______________________
+2025-03-31T22:24:12.077+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Следующая подзадача null
+2025-03-31T22:24:12.077+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Ждем завершения всех задач...
+2025-03-31T22:24:12.326+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Вернулся новый результат от ноды http://localhost:8082
+2025-03-31T22:24:12.326+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Освобождаем ноду
+2025-03-31T22:24:12.342+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-9] r.v.S.services.TaskManagementService     : Положили актуальный результат
+2025-03-31T22:24:12.342+04:00  INFO 13816 --- [ServiceDiscovery] [http-nio-8083-exec-4] r.v.S.services.TaskManagementService     : Возвращаем итог [{matrix=[[A, B, C, D], [B, A, D, C], [C, D, A, B], [D, C, B, A]]}, {matrix=[[A, B, C, D], [D, A, B, C], [C, D, A, B], [B, C, D, A]]}, {matrix=[[A, D, C, B], [B, A, D, C], [C, B, A, D], [D, C, B, A]]}, {matrix=[[A, D, C, B], [D, A, B, C], [C, B, A, D], [B, C, D, A]]}]
+2025-03-31T22:24:12.342+04:00  INFO 13816 --- [ServiceDiscovery] [Thread-7] r.v.S.services.TaskManagementService     : Отправили задачку
+2025-03-31T22:24:51.903+04:00  INFO 13816 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8082
+2025-03-31T22:24:51.903+04:00  INFO 13816 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8082 отаетила
+2025-03-31T22:24:51.903+04:00  INFO 13816 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : notify node http://localhost:8084
+2025-03-31T22:24:51.903+04:00  INFO 13816 --- [ServiceDiscovery] [scheduling-1] r.v.S.services.NotifyService             : Нода http://localhost:8084 отаетила

@@ -6,7 +6,7 @@ import ru.vaschenko.ComputingNode.dto.enam.NodeType;
 public record NodeRegisterDto(
         @Schema(description = "Alphabet for the Latin square", example = "COMPUTING")
         NodeType type,
-        @Schema(description = "Alphabet for the Latin square", example = "http://localhost:8082")
+        @Schema(description = "Alphabet for the Latin square", example = "http://localhost:8084")
         String nodeUrl
 ) {
 }
